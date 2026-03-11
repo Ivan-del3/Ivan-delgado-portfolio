@@ -1,0 +1,45 @@
+---
+// Layout.astro
+import { ClientRouter } from "astro:transitions";
+import "../styles/global.css";
+---
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Mi Portfolio</title>
+    <ClientRouter />
+  </head>
+
+  <body class="global-style">
+
+    <!-- HEADER -->
+    <header class="header-style">
+      <div class="max-w-6xl mx-auto px-6 p-2 flex justify-center">
+        <nav class="nav-main">
+          <a href="/" class="nav-link">Sobre mí</a>
+          <a href="/portfolio" class="nav-link">Portfolio</a>
+          <a href="/cv" class="nav-link">CV</a>
+          <a href="/contacto" class="nav-link">Contacto</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- MAIN -->
+    <main class="main-container">
+      <slot />
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="mt-2 tracking-wide">
+        © 2026 Iván Delgado
+      </div>
+    </footer>
+
+  </body>
+</html>

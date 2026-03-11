@@ -1,0 +1,33 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { getCollection } from "astro:content";
+
+const rituales = (await getCollection('rituales'))
+  .sort((a, b) => a.data.orden - b.data.orden);
+---
+
+<Layout>
+
+  <!-- RITUALES -->
+  <section id="rituales" class="max-w-7xl mx-auto px-6">
+    <h1 class="box-general-title text-center text-[#9f2f4a]">
+      Rituales
+    </h1>
+
+    <div class="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+      {rituales.map((ritual) => {
+        const { slug, data } = ritual;
+        const { titulo, img } = data;
+
+        return (
+          <a href={`/ritual/${slug}`} class="card">
+            <h2 class="card-title" transition:name={`titulo-${slug}`}>{titulo}</h2>
+            <div class="w-full h-56 flex items-center justify-center overflow-hidden">
+              <img src={`/${img}`} alt={titulo} class="card-image" transition:name={`img-${slug}`} />
+            </div>
+          </a>
+        );
+      })}
+    </div>
+  </section>
+</Layout>

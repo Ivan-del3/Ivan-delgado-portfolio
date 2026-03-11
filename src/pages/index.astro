@@ -1,0 +1,85 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout>
+
+<!-- PRESENTACIÓN -->
+<section class="box-style">
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
+    <!-- IMAGEN -->
+    <div class="flex justify-center md:justify-start">
+      <img
+        src="/web-personal-image.png"
+        alt="Ivan Delgado"
+        class="personal-image"
+      />
+    </div>
+
+    <!-- TEXTO -->
+    <div class="md:col-span-2 box-text space-y-4">
+      <h2 class="box-general-title">
+        Iván Delgado
+      </h2>
+      <h3 class="text-lg font-semibold">Desarrollador Web</h3>
+      <p>
+        Soy un desarrollador apasionado por transformar necesidades en aplicaciones web.
+        Me especializo en frameworks como Astro y Laravel, y trabajo con librerías como
+        Filament, Tailwind CSS y React.
+      </p>
+    </div>
+  </div>
+</section>
+
+  <div class="separator">
+    <div class="separator-line"></div>
+    <div class="separator-space"></div>
+    <div class="separator-line"></div>
+  </div>
+
+
+<!-- HABILIDADES Y CTA -->
+<section class="box-style">
+  <h2 class="box-general-title text-center">
+    Habilidades
+  </h2>
+
+  <!-- Skills -->
+  <div class="skills-container">
+    <span class="skills">HTML</span>
+    <span class="skills">CSS</span>
+    <span class="skills">JavaScript</span>
+    <span class="skills">Java</span>
+    <span class="skills">TypeScript</span>
+    <span class="skills">React</span>
+    <span class="skills">Astro</span>
+    <span class="skills">Tailwind</span>
+    <span class="skills">Git</span>
+    <span class="skills">GitHub</span>
+    <span class="skills">PHP</span>
+    <span class="skills">Laravel</span>
+    <span class="skills">Filament</span>
+    <span class="skills">Docker</span>
+    <span class="skills">MYSQL</span>
+    <span class="skills">MongoDB</span>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta flex flex-wrap justify-center gap-6 mt-8">
+    <button class="bg-[#1E1F30] text-[#f0ece9] px-6 py-3 rounded-full font-semibold hover:scale-105 transition-transform" onclick="alert('Ir a Portfolio')">
+      Ver mis proyectos
+    </button>
+    <button class="bg-[#1E1F30] text-[#f0ece9] px-6 py-3 rounded-full font-semibold hover:scale-105 transition-transform" onclick="window.open('https://github.com/Ivan-del3','_blank')">
+      Mi GitHub
+    </button>
+    <button class="bg-[#1E1F30] text-[#f0ece9] px-6 py-3 rounded-full font-semibold hover:scale-105 transition-transform" onclick="alert('Descargar CV')">
+      Descargar CV
+    </button>
+    <button class="bg-[#1E1F30] text-[#f0ece9] px-6 py-3 rounded-full font-semibold hover:scale-105 transition-transform" onclick="alert('Descargar CV')">
+      Linkedin
+    </button>
+  </div>
+</section>
+
+
+</Layout>

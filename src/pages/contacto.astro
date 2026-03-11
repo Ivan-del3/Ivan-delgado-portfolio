@@ -1,0 +1,104 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { actions } from 'astro:actions';
+import Recaptcha from '../components/Recaptcha.jsx';
+import SubmitButton from '../components/SubmmitButton';
+const result = Astro.getActionResult(actions.enviarCorreo);
+---
+
+<Layout>
+  <section class="max-w-4xl mx-auto px-6">
+
+    <div class="box-style">
+
+      <!-- Título -->
+      <h1 class="box-general-title text-center">
+        Contacto
+      </h1>
+
+      <p class="contact-text">
+        Para cualquier consulta puede escribirnos.<br />
+        Su mensaje será tratado con respeto y confidencialidad.
+      </p>
+
+      <!-- Mensaje de error -->
+      {result?.error && (
+        <div class="contact-alert contact-alert-error">
+          <p>Ocurrió un problema al enviar el mensaje</p>
+          <p>{result.error.message}</p>
+        </div>
+      )}
+
+      <!-- Mensaje de éxito -->
+      {result?.data?.success && (
+        <div class="contact-alert contact-alert-success">
+          <p>Mensaje enviado correctamente</p>
+          <p>Gracias por escribirnos.</p>
+        </div>
+      )}
+
+      <!-- Formulario -->
+      <form
+        method="POST"
+        action={actions.enviarCorreo}
+        enctype="multipart/form-data"
+        class="flex flex-col gap-6 text-[#2b2b2b]"
+      >
+
+        <label class="contact-label">
+          <span class="font-semibold">Departamento:</span>
+          <select name="departamento" required class="contact-input">
+            <option value="" disabled selected>Seleccione un destinatario</option>
+            <option value="Velas">velas@atunombre.com</option>
+            <option value="Immunocal">immunocal@atunombre.com</option>
+            <option value="Casa-Oracion">casadeoracion@atunombre.com</option>
+          </select>
+        </label>
+
+        <label class="contact-label">
+          <span class="font-semibold">Su nombre:</span>
+          <input type="text" name="nombre" required class="contact-input" />
+        </label>
+
+        <label class="contact-label">
+          <span class="font-semibold">Correo electrónico:</span>
+          <input type="email" name="email" required class="contact-input" />
+        </label>
+
+        <label class="contact-label">
+          <span class="font-semibold">Asunto:</span>
+          <input type="text" name="asunto" required class="contact-input" />
+        </label>
+
+        <label class="contact-label">
+          <span class="font-semibold">Imagen (máx. 512KB):</span>
+          <input type="file" accept="image/*" name="imagen" class="contact-input" />
+        </label>
+
+        <label class="contact-label">
+          <span class="font-semibold">Mensaje:</span>
+          <textarea name="mensaje" rows="6" required class="contact-textarea"></textarea>
+        </label>
+
+        <Recaptcha
+          client:only="react"
+          siteKey={import.meta.env.PUBLIC_RECAPTCHA_SITE_KEY}
+        />
+        <input type="hidden" id="g-recaptcha-response" name="g-recaptcha-response" />
+
+        <SubmitButton client:only="react" />
+      </form>
+    </div>
+
+    <div class="text-center mt-12">
+      <a
+        target="_blank"
+        href="https://www.youtube.com/user/claudiadosf/videos"
+        class="contact-button"
+      >
+        Opiniones
+      </a>
+    </div>
+
+  </section>
+</Layout>
