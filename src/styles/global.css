@@ -125,11 +125,11 @@
 
   /* ================================ CARDS RITUAL ==================================== */
   .card {
-    @apply bg-[#f0ece9] border border-[#faa00f]/60 rounded-xl p-6 h-full flex flex-col items-center shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-2xl;
+    @apply bg-[#f0ece9] border border-[#22233A]/60 rounded-xl p-6 h-full flex flex-col items-center shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-2xl;
   }
 
   .card-title {
-    @apply text-xl font-serif text-center text-[#faa00f] mb-4 drop-shadow-[2px_2px_2px_rgba(120,60,0,0.35)];
+    @apply text-xl font-serif text-center text-[#22233A] mb-4 drop-shadow-[2px_2px_2px_rgba(120,60,0,0.35)];
   }
 
   .card-image {
@@ -155,14 +155,14 @@
     @apply flex flex-col justify-between
            space-y-6
            bg-[#f0ece9]
-           border border-[#faa00f]/60
+           border border-[#22233A]/60
            rounded-xl
            p-10
            shadow-xl;
   }
 
   .donativo-title {
-    @apply text-2xl font-serif tracking-widest text-[#faa00f]
+    @apply text-2xl font-serif tracking-widest text-[#22233A]
            drop-shadow-[2px_2px_2px_rgba(0,0,0,0.35)];
   }
 
@@ -195,7 +195,7 @@
 
 /* Mensajes de éxito o error */
 .contact-alert {
-  @apply mb-8 p-6 bg-[#f0ece9] border border-[#faa00f]/60 rounded-xl shadow-md text-center;
+  @apply mb-8 p-6 bg-[#f0ece9] border border-[#22233A]/60 rounded-xl shadow-md text-center;
 }
 
 .contact-alert-error p:first-child {
@@ -207,7 +207,7 @@
 }
 
 .contact-alert-success p:first-child {
-  @apply text-[#faa00f] font-semibold tracking-widest text-lg;
+  @apply text-[#22233A] font-semibold tracking-widest text-lg;
 }
 
 .contact-alert-success p:last-child {
@@ -216,16 +216,16 @@
 
 /* Inputs y selects */
 .contact-input {
-  @apply p-3 bg-white border border-[#faa00f]/60 rounded focus:outline-none;
+  @apply p-3 bg-white border border-[#22233A]/60 rounded focus:outline-none;
 }
 
 /* Textarea */
 .contact-textarea {
-  @apply p-3 bg-white border border-[#faa00f]/60 rounded resize-none;
+  @apply p-3 bg-white border border-[#22233A]/60 rounded resize-none;
 }
 
 .contact-button {
-  @apply inline-block bg-[#faa00f] text-[#2b2b2b] px-10 py-3 rounded-full font-semibold tracking-wide hover:scale-105 transition-transform;
+  @apply inline-block bg-[#22233A] text-[#2b2b2b] px-10 py-3 rounded-full font-semibold tracking-wide hover:scale-105 transition-transform;
 }
 
 /*================================ RITUALES ====================================== */
@@ -233,7 +233,7 @@
 .back-link {
   @apply inline-flex items-center gap-3
          text-[#22233A] font-serif tracking-widest
-         hover:text-[#faa00f] transition-colors duration-300 mb-10;
+         hover:text-[#22233A] transition-colors duration-300 mb-10;
 }
 
 .section-grid {

@@ -17,8 +17,7 @@ const result = Astro.getActionResult(actions.enviarCorreo);
       </h1>
 
       <p class="contact-text">
-        Para cualquier consulta puede escribirnos.<br />
-        Su mensaje será tratado con respeto y confidencialidad.
+        Puede contactar conmigo para culquier consulta.<br />
       </p>
 
       <!-- Mensaje de error -->
@@ -33,7 +32,6 @@ const result = Astro.getActionResult(actions.enviarCorreo);
       {result?.data?.success && (
         <div class="contact-alert contact-alert-success">
           <p>Mensaje enviado correctamente</p>
-          <p>Gracias por escribirnos.</p>
         </div>
       )}
 
@@ -44,16 +42,6 @@ const result = Astro.getActionResult(actions.enviarCorreo);
         enctype="multipart/form-data"
         class="flex flex-col gap-6 text-[#2b2b2b]"
       >
-
-        <label class="contact-label">
-          <span class="font-semibold">Departamento:</span>
-          <select name="departamento" required class="contact-input">
-            <option value="" disabled selected>Seleccione un destinatario</option>
-            <option value="Velas">velas@atunombre.com</option>
-            <option value="Immunocal">immunocal@atunombre.com</option>
-            <option value="Casa-Oracion">casadeoracion@atunombre.com</option>
-          </select>
-        </label>
 
         <label class="contact-label">
           <span class="font-semibold">Su nombre:</span>

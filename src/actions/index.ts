@@ -9,13 +9,12 @@ export const server = {
     handler: async (_formData, ctx) => {
       const formData = await ctx.request.formData();
 
-      const departamento = formData.get("departamento")?.toString();
       const nombre = formData.get("nombre")?.toString();
       const email = formData.get("email")?.toString();
       const asunto = formData.get("asunto")?.toString();
       const mensaje = formData.get("mensaje")?.toString();
 
-      if (!departamento || !nombre || !email || !asunto || !mensaje) {
+      if (!nombre || !email || !asunto || !mensaje) {
         throw new ActionError({
           code: "BAD_REQUEST",
           message: "Faltan campos requeridos",
@@ -107,9 +106,6 @@ export const server = {
 
             <strong>Email:</strong><br />
             ${email}<br /><br />
-
-            <strong>Departamento:</strong><br />
-            ${departamento}<br /><br />
 
             <strong>Mensaje:</strong><br />
             ${mensaje.replace(/\n/g, "<br />")}<br /><br />
