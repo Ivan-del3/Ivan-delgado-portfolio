@@ -37,9 +37,8 @@ export default function SubmitButton() {
         ${
           enabled && !submitting
             ? `
-              bg-[#faa00f]
-              text-[#2b2b2b]
-              hover:bg-[#fbb53c]
+              bg-[#1E1F30] text-[#f0ece9]
+              hover:bg-[#6366F1]
               hover:shadow-md
               active:scale-[0.98]
               cursor-pointer
