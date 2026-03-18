@@ -8,70 +8,71 @@ import PdfButton from '../components/PdfButton.jsx';
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>CV Iván Delgado</title>
 </head>
-<div id="miContenido" class="contenido-cv">
+<body class="cv-body-wrapper">
+  <div class="cv-main-container">
+    
+    <div id="cv-pdf" class="cv-paper">
+      <aside class="sidebar">
+        <img src="/personal-image.png" alt="Foto Iván Delgado" class="profile-img">
+        <h1 class="name">Iván Delgado</h1>
+        <p class="role">Desarrollador de software</p>
 
+        <div class="sidebar-section">
+          <h2 class="sidebar-title">Contacto</h2>
+          <p class="sidebar-text">Email: ivandelgado31298@gmail.com</p>
+          <p class="sidebar-text">Tel: (+34) 697 98 91 16</p>
+        </div>
 
-  <div id="cv-pdf" class="cv-container shadow-xl overflow-hidden">
+        <div class="sidebar-section">
+          <h2 class="sidebar-title">Idiomas</h2>
+          <ul class="sidebar-list">
+            <li>Español - Nativo</li>
+            <li>Inglés - B2</li>
+          </ul>
+        </div>
 
-    <!-- IZQUIERDA (30%) -->
-    <div class="cv-left">
-      <img src="/personal-image.png" alt="Foto" class="cv-img">
-      <h1 class="cv-name">Iván Delgado</h1>
-      <p class="cv-role">Desarrollador de software</p>
+        <div class="sidebar-section">
+          <h2 class="sidebar-title">Habilidades</h2>
+          <ul class="sidebar-list">
+            <li>HTML, CSS, Tailwind</li>
+            <li>JavaScript / TypeScript</li>
+            <li>React / Astro</li>
+            <li>Git y control de versiones</li>
+          </ul>
+        </div>
+      </aside>
 
-      <div class="cv-block mt-6">
-        <h2 class="cv-subtitle">Contacto</h2>
-        <p>Email: ivandelgado31298@gmail.com</p>
-        <p>Tel: (+34) 697 98 91 16</p>
-      </div>
+      <main class="main-content">
+        <section class="content-section">
+          <h2 class="section-title">Perfil Profesional</h2>
+          <p class="description">
+            Desarrollador web con experiencia en frontend y diseño de interfaces modernas. 
+            Apasionado por crear soluciones intuitivas y eficientes.
+          </p>
+        </section>
 
-      <div class="cv-block mt-6">
-        <h2 class="cv-subtitle">Idiomas</h2>
-        <ul class="list-disc list-inside">
-          <li>Español - Nativo</li>
-          <li>Inglés - B2</li>
-        </ul>
-      </div>
+        <section class="content-section">
+          <h2 class="section-title">Experiencia Profesional</h2>
+          <div class="experience-item">
+            <h3 class="company-name">Mantenimiento Informático Paterna S.L.</h3>
+            <ul class="experience-list">
+              <li>Desarrollador (Marzo 2025 - Junio 2025)</li>
+              <li>Desarrollador (Noviembre 2025 - Febrero 2026)</li>
+            </ul>
+          </div>
+        </section>
 
-      <div class="cv-block mt-6">
-        <h2 class="cv-subtitle">Habilidades</h2>
-        <ul class="list-disc list-inside">
-          <li>HTML, CSS, Tailwind CSS</li>
-          <li>JavaScript / TypeScript</li>
-          <li>React / Astro</li>
-          <li>Git y control de versiones</li>
-        </ul>
-      </div>
+        <section class="content-section">
+          <h2 class="section-title">Formación Académica</h2>
+          <div class="education-item">
+            <p><strong>CF Desarrollo de Aplicaciones Web</strong></p>
+            <p>CEAC FP OFICIAL (2024 - 2026)</p>
+          </div>
+        </section>
+      </main>
     </div>
 
-    <!-- DERECHA (70%) -->
-    <div class="cv-right">
-      <section class="cv-section">
-        <h2 class="section-title">Perfil Profesional</h2>
-        <p>
-          Desarrollador web con experiencia en frontend y diseño de interfaces modernas. Apasionado por crear soluciones intuitivas y eficientes.
-        </p>
-      </section>
-
-      <section class="cv-section">
-        <h2 class="section-title">Experiencia Profesional</h2>
-        <p><strong>Mantenimiento Informático Paterna S.L.</strong></p> 
-        <ul class="list-disc list-inside">
-          <li>Desarrollador (Marzo 2025 - Junio 2025)</li>
-          <li>Desarrollador (Noviembre 2025 - Febrero 2026)</li>
-        </ul>
-      </section>
-
-      <section class="cv-section">
-        <h2 class="section-title">Formación Académica</h2>
-        <p><strong>CF Desarrollo de Aplicaciones Web</strong> - CEAC FP OFICIAL (2024 - 2026)</p>
-      </section>
-    </div>
+    <PdfButton client:only="react" targetId="cv-pdf" filename="CV-Ivan-Delgado.pdf"/>
   </div>
-
-
-<PdfButton client:only="react" targetId="miContenido" filename="MiCV.pdf"/>
-
-
-</div>
+</body>
 </html>
