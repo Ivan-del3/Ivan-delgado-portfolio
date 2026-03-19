@@ -147,7 +147,7 @@
 
 /* ================================ SKILLS ==================================== */
 .cta-component{
-  @apply bg-[#1E1F30] text-[#f0ece9] px-6 py-3 rounded-full font-semibold hover:scale-105 transition-transform duration-300;
+  @apply bg-[#1E1F30] text-[#f0ece9] px-6 py-3 rounded-full font-semibold hover:scale-105 transition-transform duration-300 cursor-pointer;
 }
 
 /* ================================ CONTACTO ==================================== */
@@ -263,12 +263,14 @@
 }
 
 .profile-img {
-  width: 110px;
-  height: 110px;
+  width: 140px;
+  height: 140px;
   border-radius: 50%;
   object-fit: cover;
+  object-position: top;
   margin-bottom: 20px;
   border: 3px solid #3e3f5a;
+
 }
 
 .name {
@@ -280,20 +282,20 @@
 
 .role {
   font-size: 14px;
-  margin-bottom: 30px;
-  opacity: 0.8;
+  margin-bottom: 60px;
 }
 
 .sidebar-section {
   width: 100%;
   margin-bottom: 30px;
+  padding-left: 10px;
 }
 
 .sidebar-title {
   color: #ffffff;
   font-size: 18px;
   border-bottom: 1px solid #4b5563;
-  padding-bottom: 5px;
+  padding-bottom: 10px;
   margin-bottom: 15px;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -305,8 +307,7 @@
 }
 
 .sidebar-list {
-  list-style-type: disc;
-  padding-left: 20px;
+  padding-left: 5px;
   font-size: 13px;
 }
 
@@ -322,45 +323,40 @@
 }
 
 .content-section {
-  margin-bottom: 35px; /* Margen forzado entre secciones */
+  margin-bottom: 25px;
+  font-size: 14px;
 }
 
 .section-title {
   font-size: 20px;
   font-weight: bold;
   color: #111827;
-  border-bottom: 2px solid #e5e7eb;
-  padding-bottom: 8px;
-  margin-bottom: 15px; /* Margen bajo el título */
+  border-bottom: 2px solid #afafaf98;
+  padding-bottom: 12px;
+  margin-bottom: 15px; 
   text-transform: uppercase;
 }
 
 .description {
-  font-size: 14px;
   line-height: 1.6;
 }
 
-.company-name {
-  font-size: 15px;
-  font-weight: 800;
-  color: #111827 !important;
-  display: block !important;
-  margin-bottom: 10px;
-}
 
 .experience-list {
-  list-style-type: disc;
-  padding-left: 20px;
+  padding-left: 10px;
+  margin-bottom: 12px;
 }
 
 .experience-list li {
-  font-size: 14px;
   margin-bottom: 8px;
 }
-
-.education-item p {
-  font-size: 14px;
-  margin-bottom: 5px;
+.experience-item{
+  margin-bottom: 10px;
+}
+.strong-item {
+  font-size: 16px;
+  margin-bottom: 12px;
+  font-weight: bold;
 }
 
 /* BOTÓN DESCARGA */
@@ -376,6 +372,6 @@
   transition: transform 0.2s ease;
 }
 
-#downloadPdf:hover {
+#downloadP-df:hover {
   transform: scale(1.05);
 }
