@@ -2,76 +2,101 @@
 import "../styles/global.css";
 import PdfButton from '../components/PdfButton.jsx';
 ---
+
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>CV Iván Delgado</title>
+
 </head>
-<div id="miContenido" class="bg-gray-100 flex flex-col items-center py-6">
+<body class="cv-body-wrapper">
+  <div class="cv-main-container">
+    
+    <div id="cv-pdf" class="cv-paper">
+      <aside class="sidebar">
+        <img src="/personal-image.png" alt="Foto Iván Delgado" class="profile-img">
+        <h1 class="name">Iván Delgado</h1>
+        <p class="role">Desarrollador de software</p>
 
+        <div class="sidebar-section">
+          <h2 class="sidebar-title">Contacto</h2>
+          <p class="sidebar-text">Email: ivandelgado31298@gmail.com</p>
+          <p class="sidebar-text">Tel: (+34) 697 98 91 16</p>
+        </div>
 
-  <div id="cv-pdf" class="cv-container bg-white shadow-xl overflow-hidden">
+        <div class="sidebar-section">
+          <h2 class="sidebar-title">Idiomas</h2>
+          <ul class="sidebar-list">
+            <li>- Español - Nativo</li>
+            <li>- Valenciano - Nativo</li>
+            <li>- Inglés - A2</li>
+          </ul>
+        </div>
 
-    <!-- IZQUIERDA (30%) -->
-    <div class="cv-left">
-      <img src="/personal-image.png" alt="Foto" class="cv-img">
-      <h1 class="cv-name">Iván Delgado</h1>
-      <p class="cv-role">Desarrollador de software</p>
+        <div class="sidebar-section">
+          <h2 class="sidebar-title">Habilidades</h2>
+          <ul class="sidebar-list">
+            <li>- Frontend: HTML5, CSS3, JavaScript (ES6+), TypeScript, React, Astro, Tailwind CSS</li>
+            <li>- Backend: Java, PHP, Laravel, REST APIs</li>
+            <li>- Databases: MySQL, PL/SQL, MongoDB</li>
+            <li>- Tools & DevOps: Git, GitHub, Docker</li>
+            <li>- AI: Ollama (LLMs, Prompt Engineering)</li>
+          </ul>
+        </div>
+      </aside>
 
-      <div class="cv-block mt-6">
-        <h2 class="cv-subtitle">Contacto</h2>
-        <p>Email: ivandelgado31298@gmail.com</p>
-        <p>Tel: (+34) 697 98 91 16</p>
-      </div>
+      <main class="main-content">
+        <section class="content-section">
+          <h2 class="section-title">Perfil Profesional</h2>
+          <p class="description">
+          Desarrollador web junior especializado en aplicaciones frontend y backend, con experiencia en JavaScript (ES6+), React y Laravel. 
+          He desarrollado aplicaciones web completas integrando APIs REST y bases de datos como MySQL y MongoDB. 
+          Busco incorporarme a un equipo donde seguir creciendo como desarrollador full stack y aportar soluciones eficientes y escalables.
+          </p>
+        </section>
 
-      <div class="cv-block mt-6">
-        <h2 class="cv-subtitle">Idiomas</h2>
-        <ul class="list-disc list-inside">
-          <li>Español - Nativo</li>
-          <li>Inglés - B2</li>
-        </ul>
-      </div>
+        <section class="content-section">
+          <h2 class="section-title">Experiencia Profesional</h2>
+          <div class="experience">
+            <p class="strong-item">Mantenimiento Informático Paterna S.L.</p>
+            <p class="experience-item">Desarrollador Web (Marzo 2025 - Junio 2025)</p>
+            <ul class="experience-list">
+              <li>- Desarrollo backend con PHP y Laravel (MVC)</li>
+              <li>- Diseño y modelado de base de datos relacional (MySQL)</li>
+              <li>- Implementación de relaciones entre entidades con Eloquent ORM</li>
+              <li>- Gestión de base de datos mediante migraciones y seeders</li>
+              <li>- Desarrollo de lógica de negocio con Observers (event-driven)</li>
+              <li>- Implementación de sistema de roles y permisos (RBAC, Policies)</li>
+              <li>- Desarrollo de panel de administración con Filament (CRUD, filtros, datos relacionales)</li>
+              <li>- Validación de datos y lógica condicional en formularios</li>
+              <li>- Uso de Docker y Git en entorno de trabajo colaborativo</li>
+            </ul>
+            <p class="experience-item">Desarrollador Web (Noviembre 2025 - Febrero 2026)</p>
+            <ul class="experience-list">
+              <li>- Desarrollo web con Astro (componentes, layouts y SSG)</li>
+              <li>- Integración de React en entorno Astro</li>
+              <li>- Desarrollo backend con Node.js (Astro Actions) y envío de correos</li>
+              <li>- Validación de formularios y protección con reCAPTCHA</li>
+              <li>- Implementación de internacionalización (i18n)</li>
+              <li>- Diseño responsive con media querys y Tailwind CSS</li>
+            </ul>
+          </div>
+        </section>
 
-      <div class="cv-block mt-6">
-        <h2 class="cv-subtitle">Habilidades</h2>
-        <ul class="list-disc list-inside">
-          <li>HTML, CSS, Tailwind CSS</li>
-          <li>JavaScript / TypeScript</li>
-          <li>React / Astro</li>
-          <li>Git y control de versiones</li>
-        </ul>
-      </div>
+        <section class="content-section">
+          <h2 class="section-title">Formación Académica</h2>
+          <p class="strong-item">CFGS Desarrollo de Aplicaciones Web</p>
+          <p>CEAC FP (2024 - 2026)</p>
+          <ul class="experience-list">
+            <li>- Desarrollo de aplicaciones web full stack</li>
+            <li>- Programación en Java, JavaScript y PHP</li>
+            <li>- Diseño y gestión de bases de datos (MySQL, MongoDB)</li>
+          </ul>
+        </section>
+      </main>
     </div>
-
-    <!-- DERECHA (70%) -->
-    <div class="cv-right">
-      <section class="cv-section">
-        <h2 class="section-title">Perfil Profesional</h2>
-        <p>
-          Desarrollador web con experiencia en frontend y diseño de interfaces modernas. Apasionado por crear soluciones intuitivas y eficientes.
-        </p>
-      </section>
-
-      <section class="cv-section">
-        <h2 class="section-title">Experiencia Profesional</h2>
-        <p><strong>Mantenimiento Informático Paterna S.L.</strong></p> 
-        <ul class="list-disc list-inside">
-          <li>Desarrollador (Marzo 2025 - Junio 2025)</li>
-          <li>Desarrollador (Noviembre 2025 - Febrero 2026)</li>
-        </ul>
-      </section>
-
-      <section class="cv-section">
-        <h2 class="section-title">Formación Académica</h2>
-        <p><strong>CF Desarrollo de Aplicaciones Web</strong> - CEAC FP OFICIAL (2024 - 2026)</p>
-      </section>
-    </div>
-  </div>
-
-
-<PdfButton client:only="react" targetId="miContenido" filename="MiCV.pdf"/>
-
-
-</div>
+    <PdfButton client:only="react" targetId="cv-pdf" filename="CV-Ivan-Delgado.pdf"/>
+  </div> 
+</body>
 </html>

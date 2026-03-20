@@ -4,18 +4,33 @@ import html2pdf from 'html2pdf.js';
 export default function PdfButton({ targetId, filename }) {
   const handleClick = () => {
     const element = document.getElementById(targetId);
-    console.log(element)
+    
     if (!element) return;
-    html2pdf()
-      .set({
-        margin: 1,
-        filename,
-        html2canvas: { scale: 2 },
-        jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' },
-      })
-      .from(element)
-      .save();
+
+    const opt = {
+      margin: 0,
+      filename: filename || 'CV-Delgado.pdf',
+      image: { type: 'jpeg', quality: 1 },
+      html2canvas: { 
+        scale: 2, 
+        useCORS: true,
+        letterRendering: true,
+        scrollY: 0,
+        scrollX: 0,
+        windowWidth: element.clientWidth
+      },
+      jsPDF: { 
+        unit: 'mm', 
+        format: 'a4', 
+        orientation: 'portrait' 
+      },
+      pagebreak: { mode: ['avoid-all', 'css', 'legacy'] } 
+    };
+
+    html2pdf().from(element).set(opt).save();
   };
 
-  return <button onClick={handleClick}>Descargar PDF</button>;
+  return (
+    <button id="downloadPdf" onClick={handleClick}>Descargar CV</button>
+  );
 }

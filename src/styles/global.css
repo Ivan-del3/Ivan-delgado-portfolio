@@ -147,7 +147,7 @@
 
 /* ================================ SKILLS ==================================== */
 .cta-component{
-  @apply bg-[#1E1F30] text-[#f0ece9] px-6 py-3 rounded-full font-semibold hover:scale-105 transition-transform duration-300;
+  @apply bg-[#1E1F30] text-[#f0ece9] px-6 py-3 rounded-full font-semibold hover:scale-105 transition-transform duration-300 cursor-pointer;
 }
 
 /* ================================ CONTACTO ==================================== */
@@ -225,50 +225,151 @@
 
 }
 
+/* ----------------- CV ---------------------- */
 
-.cv-container {
-  @apply flex w-[210mm] h-[297mm] rounded-xl overflow-hidden shadow-xl;
+.cv-body-wrapper {
+  background-color: #f3f4f6;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  padding: 40px 0;
 }
 
-/* IZQUIERDA */
-.cv-left {
-  @apply w-[30%] bg-[#22233A] text-white p-8 flex flex-col items-center text-center;
+.cv-main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.cv-img {
-  @apply w-28 h-28 rounded-full object-cover mb-4;
+/* MEDIDAS A4 EXACTAS */
+.cv-paper {
+  width: 210mm;
+  height: 297mm; 
+  background-color: #ffffff;
+  display: flex;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  overflow: hidden;
 }
 
-.cv-name {
-  @apply text-2xl font-bold;
+/* COLUMNA IZQUIERDA */
+.sidebar {
+  width: 70mm;
+  background-color: #22233A;
+  color: #d1d5db;
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.cv-role {
-  @apply text-sm text-gray-300 mb-4;
+.profile-img {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  border: 3px solid #3e3f5a;
+
 }
 
-.cv-subtitle {
-  @apply text-lg font-semibold mb-2 border-b border-gray-500 pb-1;
+.name {
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 5px;
 }
 
-.cv-block {
-  @apply w-full;
+.role {
+  font-size: 14px;
+  margin-bottom: 40px; 
 }
 
-/* DERECHA */
-.cv-right {
-  @apply w-[70%] bg-white p-10 flex flex-col;
+.sidebar-section {
+  width: 100%;
+  margin-bottom: 20px; 
+  padding-left: 10px;
 }
 
-.cv-section {
-  @apply mb-8;
+.sidebar-title {
+  color: #ffffff;
+  font-size: 18px;
+  border-bottom: 1px solid #4b5563;
+  padding-bottom: 10px;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.sidebar-text {
+  font-size: 13px;
+  margin-bottom: 8px;
+}
+
+.sidebar-list {
+  padding-left: 5px;
+  font-size: 13px;
+}
+
+.sidebar-list li {
+  margin-bottom: 8px;
+}
+
+/* COLUMNA DERECHA */
+.main-content {
+  width: 140mm;
+  padding: 20px 35px;
+  color: #374151;
+}
+
+.content-section {
+  margin-bottom: 20px;
+  font-size: 14px;
 }
 
 .section-title {
-  @apply text-xl font-semibold mb-3 border-b-2 border-gray-200 pb-1;
+  font-size: 20px;
+  font-weight: bold;
+  color: #111827;
+  border-bottom: 2px solid #afafaf98;
+  padding-bottom: 10px;
+  margin-bottom: 12px; 
+  text-transform: uppercase;
 }
 
-.cv-right ul,
-.cv-left ul {
-  @apply list-disc list-inside text-gray-700;
+.description {
+  line-height: 1.6;
+}
+
+
+.experience-list {
+  padding-left: 10px;
+  margin-bottom: 12px;
+}
+
+.experience-list li {
+  margin-bottom: 8px;
+}
+.experience-item{
+  margin-bottom: 10px;
+}
+.strong-item {
+  font-size: 16px;
+  margin-bottom: 12px;
+  font-weight: bold;
+}
+
+/* BOTÓN DESCARGA */
+#downloadPdf {
+  margin-top: 30px;
+  padding: 12px 25px;
+  background-color: #22233A;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: transform 0.2s ease;
+}
+
+#downloadPdf:hover {
+  transform: scale(1.05);
 }
