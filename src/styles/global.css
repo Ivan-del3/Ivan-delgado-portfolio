@@ -301,7 +301,7 @@
 
 .sidebar-text {
   font-size: 13px;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 }
 
 .sidebar-list {
@@ -311,6 +311,21 @@
 
 .sidebar-list li {
   margin-bottom: 8px;
+}
+.skill-block {
+  margin-bottom: 18px; 
+}
+
+.skill-category {
+  font-size: 14px;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 3px;
+}
+
+.skill-line {
+  font-size: 13px;
+  line-height: 1.4;
 }
 
 /* COLUMNA DERECHA */
@@ -347,6 +362,7 @@
 
 .experience-list li {
   margin-bottom: 8px;
+  text-indent: -10px;
 }
 .experience-item{
   margin-bottom: 10px;
