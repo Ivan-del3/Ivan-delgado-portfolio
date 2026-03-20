@@ -12,26 +12,25 @@ export default function PdfButton({ targetId, filename }) {
       filename: filename || 'CV-Delgado.pdf',
       image: { type: 'jpeg', quality: 1 },
       html2canvas: { 
-        scale: 4, // Mayor escala para evitar borrosidad
+        scale: 2, 
         useCORS: true,
         letterRendering: true,
         scrollY: 0,
-        scrollX: 0
+        scrollX: 0,
+        windowWidth: element.clientWidth
       },
       jsPDF: { 
         unit: 'mm', 
         format: 'a4', 
         orientation: 'portrait' 
       },
-      pagebreak: { mode: 'avoid-all' } // Evita saltos de página accidentales
+      pagebreak: { mode: ['avoid-all', 'css', 'legacy'] } 
     };
 
     html2pdf().from(element).set(opt).save();
   };
 
   return (
-    <button id="downloadPdf" onClick={handleClick}>
-      Descargar CV en PDF
-    </button>
+    <button id="downloadPdf" onClick={handleClick}>Descargar CV</button>
   );
 }

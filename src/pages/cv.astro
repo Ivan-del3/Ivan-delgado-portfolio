@@ -2,11 +2,13 @@
 import "../styles/global.css";
 import PdfButton from '../components/PdfButton.jsx';
 ---
+
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>CV Iván Delgado</title>
+
 </head>
 <body class="cv-body-wrapper">
   <div class="cv-main-container">
@@ -77,7 +79,7 @@ import PdfButton from '../components/PdfButton.jsx';
               <li>- Desarrollo backend con Node.js (Astro Actions) y envío de correos</li>
               <li>- Validación de formularios y protección con reCAPTCHA</li>
               <li>- Implementación de internacionalización (i18n)</li>
-              <li>- Diseño responsive con y Tailwind CSS</li>
+              <li>- Diseño responsive con media querys y Tailwind CSS</li>
             </ul>
           </div>
         </section>
@@ -94,7 +96,6 @@ import PdfButton from '../components/PdfButton.jsx';
         </section>
       </main>
     </div>
-
     <PdfButton client:only="react" targetId="cv-pdf" filename="CV-Ivan-Delgado.pdf"/>
   </div> 
 </body>

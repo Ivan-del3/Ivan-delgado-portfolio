@@ -244,7 +244,7 @@
 /* MEDIDAS A4 EXACTAS */
 .cv-paper {
   width: 210mm;
-  height: 297mm;
+  height: 297mm; 
   background-color: #ffffff;
   display: flex;
   box-shadow: 0 10px 25px rgba(0,0,0,0.2);
@@ -253,7 +253,7 @@
 
 /* COLUMNA IZQUIERDA */
 .sidebar {
-  width: 75mm;
+  width: 70mm;
   background-color: #22233A;
   color: #d1d5db;
   padding: 30px 20px;
@@ -266,8 +266,6 @@
   width: 140px;
   height: 140px;
   border-radius: 50%;
-  object-fit: cover;
-  object-position: top;
   margin-bottom: 20px;
   border: 3px solid #3e3f5a;
 
@@ -282,12 +280,12 @@
 
 .role {
   font-size: 14px;
-  margin-bottom: 60px;
+  margin-bottom: 40px; 
 }
 
 .sidebar-section {
   width: 100%;
-  margin-bottom: 30px;
+  margin-bottom: 20px; 
   padding-left: 10px;
 }
 
@@ -296,7 +294,7 @@
   font-size: 18px;
   border-bottom: 1px solid #4b5563;
   padding-bottom: 10px;
-  margin-bottom: 15px;
+  margin-bottom: 12px;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
@@ -317,13 +315,13 @@
 
 /* COLUMNA DERECHA */
 .main-content {
-  width: 135mm;
-  padding: 40px;
+  width: 140mm;
+  padding: 20px 35px;
   color: #374151;
 }
 
 .content-section {
-  margin-bottom: 25px;
+  margin-bottom: 20px;
   font-size: 14px;
 }
 
@@ -332,8 +330,8 @@
   font-weight: bold;
   color: #111827;
   border-bottom: 2px solid #afafaf98;
-  padding-bottom: 12px;
-  margin-bottom: 15px; 
+  padding-bottom: 10px;
+  margin-bottom: 12px; 
   text-transform: uppercase;
 }
 
@@ -372,6 +370,6 @@
   transition: transform 0.2s ease;
 }
 
-#downloadP-df:hover {
+#downloadPdf:hover {
   transform: scale(1.05);
 }
