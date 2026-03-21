@@ -14,7 +14,7 @@ import "../styles/global.css";
     <ClientRouter />
   </head>
 
-  <body class="global-style">
+  <body class="flex flex-col min-h-screen global-style">
 
     <!-- HEADER -->
     <header class="header-style">
@@ -29,7 +29,7 @@ import "../styles/global.css";
     </header>
 
     <!-- MAIN -->
-    <main class="main-container">
+    <main class="main-container flex-1 w-full">
       <slot />
     </main>
 

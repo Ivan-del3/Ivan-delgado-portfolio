@@ -10,11 +10,11 @@ const rituales = (await getCollection('rituales'))
 
   <!-- RITUALES -->
   <section id="rituales" class="max-w-7xl mx-auto px-6">
-    <h1 class="box-general-title text-center text-[#9f2f4a]">
+    <h1 class="box-general-title text-center text-[#f0ece9]">
       Proyectos
     </h1>
 
-    <div class="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+    <div class="grid-cards">
       {rituales.map((ritual) => {
         const { slug, data } = ritual;
         const { titulo, img } = data;
@@ -22,7 +22,7 @@ const rituales = (await getCollection('rituales'))
         return (
           <a href={`/ritual/${slug}`} class="card">
             <h2 class="card-title" transition:name={`titulo-${slug}`}>{titulo}</h2>
-            <div class="w-full h-56 flex items-center justify-center overflow-hidden">
+            <div class="w-full h-40 flex items-center justify-center overflow-hidden">
               <img src={`/${img}`} alt={titulo} class="card-image" transition:name={`img-${slug}`} />
             </div>
           </a>

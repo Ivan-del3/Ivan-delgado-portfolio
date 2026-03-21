@@ -23,16 +23,16 @@ const { titulo, img, secciones } = data;
 ---
 
 <Layout>
-  <section class="max-w-6xl mx-auto px-6">
+  <section class="max-w-7xl mx-auto px-6">
 
     <!-- Back link -->
-    <a href="/#rituales" class="back-link">
+    <a href="/portfolio" class="back-link">
       <span class="text-2xl leading-none">←</span>
-      <span class="text-sm md:text-base">Volver a las triadas</span>
+      <span class="text-sm md:text-base">Volver a los proyectos</span>
     </a>
 
     <!-- Título principal -->
-    <h1 class="box-general-title md:text-5xl text-center text-[#9f2f4a] mb-20">
+    <h1 class="box-general-title md:text-5xl text-center text-[#f0ece9] mb-20">
       {titulo}
     </h1>
 
@@ -48,7 +48,7 @@ const { titulo, img, secciones } = data;
             <section class="section-grid">
 
               <div class="section-image">
-                <img src={`/${imagen}`} alt={seccion.titulo} class="img-standard max-h-[520px]" />
+                <img src={`/${imagen}`} alt={seccion.titulo} class="img-project" />
               </div>
 
               <div class="space-y-6 text-[#2b2b2b]">
