@@ -2,28 +2,28 @@
 import Layout from "../layouts/Layout.astro";
 import { getCollection } from "astro:content";
 
-const rituales = (await getCollection('rituales'))
-  .sort((a, b) => a.data.orden - b.data.orden);
+const projects = (await getCollection('projects'))
+  .sort((a, b) => a.data.order - b.data.order);
 ---
 
 <Layout>
 
-  <!-- RITUALES -->
-  <section id="rituales" class="max-w-7xl mx-auto px-6">
+  <!-- projects -->
+  <section id="projects" class="max-w-7xl mx-auto px-6">
     <h1 class="box-general-title text-center text-[#f0ece9]">
       Proyectos
     </h1>
 
     <div class="grid-cards">
-      {rituales.map((ritual) => {
-        const { slug, data } = ritual;
-        const { titulo, img } = data;
+      {projects.map((project) => {
+        const { slug, data } = project;
+        const { title, img } = data;
 
         return (
-          <a href={`/ritual/${slug}`} class="card">
-            <h2 class="card-title" transition:name={`titulo-${slug}`}>{titulo}</h2>
+          <a href={`/project/${slug}`} class="card">
+            <h2 class="card-title" transition:name={`titulo-${slug}`}>{title}</h2>
             <div class="w-full h-40 flex items-center justify-center overflow-hidden">
-              <img src={`/${img}`} alt={titulo} class="card-image" transition:name={`img-${slug}`} />
+              <img src={`/${img}`} alt={title} class="card-image" transition:name={`img-${slug}`} />
             </div>
           </a>
         );

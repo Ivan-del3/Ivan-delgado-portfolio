@@ -4,22 +4,22 @@ import Layout from "../../layouts/Layout.astro";
 import "../../styles/global.css";
 
 export async function getStaticPaths() {
-  const rituales = await getCollection("rituales");
-  return rituales.map(r => ({
+  const projects = await getCollection("projects");
+  return projects.map(r => ({
     params: { id: r.slug }
   }));
 }
 
 const { id } = Astro.params;
-const rituales = await getCollection("rituales");
-const ritual = rituales.find(r => r.slug === id);
+const projects = await getCollection("projects");
+const project = projects.find(r => r.slug === id);
 
-if (!ritual) {
-  throw new Error(`Ritual no encontrado: ${id}`);
+if (!project) {
+  throw new Error(`Proyecto no encontrado: ${id}`);
 }
 
-const { data } = ritual;
-const { titulo, img, secciones } = data;
+const { data } = project;
+const { title, img, sections } = data;
 ---
 
 <Layout>
@@ -33,32 +33,32 @@ const { titulo, img, secciones } = data;
 
     <!-- Título principal -->
     <h1 class="box-general-title md:text-5xl text-center text-[#f0ece9] mb-20">
-      {titulo}
+      {title}
     </h1>
 
     <!-- Secciones -->
     <div class="flex flex-col">
 
-      {secciones?.map((seccion, index) => {
-        const imagen = index === 0 ? img : seccion.img;
-        const esUltima = index === secciones.length - 1;
+      {sections?.map((section, index) => {
+        const image = index === 0 ? img : section.img;
+        const last = index === sections.length - 1;
 
         return (
           <div>
             <section class="section-grid">
 
               <div class="section-image">
-                <img src={`/${imagen}`} alt={seccion.titulo} class="img-project" />
+                <img src={`/${image}`} alt={section.title} class="img-project" />
               </div>
 
               <div class="space-y-6 text-[#2b2b2b]">
-                <h2 class="section-title">{seccion.titulo}</h2>
-                <p class="section-text">{seccion.texto}</p>
+                <h2 class="section-title">{section.title}</h2>
+                <p class="section-text">{section.text}</p>
               </div>
 
             </section>
 
-            {!esUltima && (
+            {!last && (
               <div class="separator">
                 <div class="separator-line"></div>
                 <div class="separator-space"></div>
