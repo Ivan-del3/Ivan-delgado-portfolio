@@ -16,25 +16,31 @@ import "../styles/global.css";
 
   <body class="flex flex-col min-h-screen global-style">
 
-    <header class="header-style">
-      <div class="max-w-6xl mx-auto px-6 py-8 flex justify-center"> <nav class="nav-main">
-          <a href="/" class="nav-link">Sobre mí</a>
-          <a href="/portfolio" class="nav-link">Portfolio</a>
-          <a href="/cv" class="nav-link" target="_blank">CV</a>
-          <a href="/contacto" class="nav-link">Contacto</a>
-        </nav>
-      </div>
+  <header class="header-style">
+        <div class="max-w-6xl mx-auto py-0  sm:pl-10 sm:pr-22 md:pl-8 pr-12 py-3 xl:py-12  flex items-center justify-between xl:justify-center">
 
-      <div class="logo">
-        <a href="/">
-          <img
-            src="/marca-personal2.png"
-            alt="Iván Delgado - Marca Personal"
-            class="h-40 object-contain transition-transform duration-300 hover:scale-105" 
-          />
-        </a>
-      </div>
-    </header>
+          <div class="logo">
+            <a href="/">
+              <img
+                src="/marca-personal7.png"
+                alt="Iván Delgado - Marca Personal"
+                class="h-22 xl:h-26 object-contain transition-transform duration-300 hover:scale-105"
+              />
+            </a>
+          </div>
+
+          <button id="menu-btn" class="md:hidden text-3xl text-[#22233A] z-50">
+            ☰
+          </button>
+
+          <nav id="menu" class="nav-main hidden md:flex">
+            <a href="/" class="nav-link">Sobre mí</a>
+            <a href="/portfolio" class="nav-link">Portfolio</a>
+            <a href="/cv" class="nav-link" target="_blank">CV</a>
+            <a href="/contacto" class="nav-link">Contacto</a>
+          </nav>
+        </div>
+      </header>
 
     <main class="main-container flex-1 w-full">
       <slot />
@@ -45,6 +51,14 @@ import "../styles/global.css";
         © 2026 Iván Delgado
       </div>
     </footer>
+<script>
+  const btn = document.getElementById('menu-btn');
+  const menu = document.getElementById('menu');
+if(btn && menu)
+  btn.addEventListener('click', () => {
+    menu.classList.toggle('hidden');
+  });
+</script>
 
   </body>
 </html>
