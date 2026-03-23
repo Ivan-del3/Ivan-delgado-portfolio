@@ -19,7 +19,7 @@ export default function DropdownMenu() {
   }, []);
 
   return (
-    <button id="menu-btn" className="md:hidden text-3xl text-[#22233A] z-50">
+    <button id="menu-btn" className="menu-btn">
       ☰
     </button>
   );

@@ -58,6 +58,15 @@
             xl:left-10;
     }
 
+  .menu-btn {
+    @apply 
+    w-10
+    border-2 border-[#22233A] rounded
+    md:hidden 
+    text-3xl text-[#22233A];
+
+  }
+
   /* === FOOTER === */
   .site-footer {
     @apply bg-[#f0ece9]
