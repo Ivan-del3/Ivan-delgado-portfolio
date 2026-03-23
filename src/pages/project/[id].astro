@@ -20,7 +20,7 @@ if (!project) {
 }
 
 const { data } = project;
-const { title, img, sections } = data;
+const { title, img, sections, repository, link } = data;
 ---
 
 <Layout>
@@ -72,5 +72,30 @@ const { title, img, sections } = data;
       })}
 
     </div>
+    <div class="project-links-container">
+      <h3 class="links-title">¿Quieres saber más?</h3>
+      <div class="links-grid">
+        {repository && (
+          <a href={repository} target="_blank" class="link-card">
+            <span class="link-icon">GitHub</span>
+            <div class="link-content">
+              <span class="link-label">Repositorio</span>
+              <span class="link-url">Ver código fuente →</span>
+            </div>
+          </a>
+        )}
+        
+        {link && (
+          <a href={link} target="_blank" class="link-card highlight">
+            <span class="link-icon">Web</span>
+            <div class="link-content">
+              <span class="link-label">Proyecto</span>
+              <span class="link-url">Visitar el sitio →</span>
+            </div>
+          </a>
+        )}
+      </div>
+    </div>
+
   </section>
 </Layout>
