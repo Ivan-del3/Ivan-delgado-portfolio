@@ -16,24 +16,30 @@ import "../styles/global.css";
 
   <body class="flex flex-col min-h-screen global-style">
 
-    <!-- HEADER -->
     <header class="header-style">
-      <div class="max-w-6xl mx-auto px-6 p-2 flex justify-center">
-        <nav class="nav-main">
+      <div class="max-w-6xl mx-auto px-6 py-8 flex justify-center"> <nav class="nav-main">
           <a href="/" class="nav-link">Sobre mí</a>
           <a href="/portfolio" class="nav-link">Portfolio</a>
           <a href="/cv" class="nav-link" target="_blank">CV</a>
           <a href="/contacto" class="nav-link">Contacto</a>
         </nav>
       </div>
+
+      <div class="logo">
+        <a href="/">
+          <img
+            src="/marca-personal2.png"
+            alt="Iván Delgado - Marca Personal"
+            class="h-40 object-contain transition-transform duration-300 hover:scale-105" 
+          />
+        </a>
+      </div>
     </header>
 
-    <!-- MAIN -->
     <main class="main-container flex-1 w-full">
       <slot />
     </main>
 
-    <!-- FOOTER -->
     <footer class="site-footer">
       <div class="mt-2 tracking-wide">
         © 2026 Iván Delgado
