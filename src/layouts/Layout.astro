@@ -1,6 +1,7 @@
 ---
 import { ClientRouter } from "astro:transitions";
 import "../styles/global.css";
+import DropdownMenu from '../components/DropdownMenu.jsx';
 ---
 
 <!DOCTYPE html>
@@ -29,9 +30,10 @@ import "../styles/global.css";
             </a>
           </div>
 
-          <button id="menu-btn" class="md:hidden text-3xl text-[#22233A] z-50">
+          <!-- <button id="menu-btn" class="md:hidden text-3xl text-[#22233A] z-50">
             ☰
-          </button>
+          </button> -->
+          <DropdownMenu client:visible/>
 
           <nav id="menu" class="nav-main hidden md:flex">
             <a href="/" class="nav-link">Sobre mí</a>
@@ -51,14 +53,6 @@ import "../styles/global.css";
         © 2026 Iván Delgado
       </div>
     </footer>
-<script>
-  const btn = document.getElementById('menu-btn');
-  const menu = document.getElementById('menu');
-if(btn && menu)
-  btn.addEventListener('click', () => {
-    menu.classList.toggle('hidden');
-  });
-</script>
 
   </body>
 </html>
