@@ -18,7 +18,7 @@
            py-16;
   }
 
-  /* === HEADER === */
+  /* ============= HEADER =============== */
   .header-style {
     @apply relative
            bg-[#f0ece9]
@@ -26,17 +26,24 @@
            border-[#22233A];
   }
 
+  .header-container {
+    @apply 
+          max-w-6xl mx-auto
+          py-3 sm:pl-10 sm:pr-22 md:pl-8 pr-12 xl:py-12  
+          flex items-center justify-between xl:justify-center;
+  }
+
 .nav-main {
   @apply flex flex-col md:flex-row
          items-center
          gap-8 md:gap-x-10 lg:gap-x-20
+         py-6 md:py-0
          text-base md:text-lg
          uppercase
          tracking-[0.15em]
          bg-[#f0ece9] md:bg-transparent
          absolute md:static
          top-full left-0 w-full md:w-auto
-         py-6
          shadow-md md:shadow-none
          border-b-4 border-[#6366F1] md:border-none
          shadow-2xl md:shadow-none
@@ -60,6 +67,12 @@
             xl:top-1/2 xl:-translate-y-1/2
             xl:left-10;
     }
+  .img-logo {
+    @apply 
+          h-22 xl:h-26 
+          object-contain 
+          transition-transform duration-300 hover:scale-105;
+  }
 
   .menu-btn {
     @apply 
@@ -73,7 +86,7 @@
 
   }
 
-  /* === FOOTER === */
+  /* ========= FOOTER =========== */
   .site-footer {
     @apply bg-[#f0ece9]
            border-t
@@ -148,31 +161,26 @@
   
   .card {
     @apply relative bg-[#f0ece9] 
-           border-t-4 border-t-[#6366F1] 
-           rounded-2xl flex flex-col overflow-hidden
-           shadow-[0_10px_30px_rgba(240,236,233,0.08)] 
+           border-t-4 border-t-[#6366F1] rounded-2xl
+           flex flex-col overflow-hidden
+           shadow-[0_10px_30px_rgba(240,236,233,0.09)] 
            transition-all duration-500
            hover:-translate-y-2 
-           hover:shadow-[0_20px_50px_rgba(99,102,241,0.3)]; 
+           hover:shadow-[0_20px_50px_rgba(99,102,241,0.35)]; 
   }
 
   .card-image-wrapper {
-    /* Cambiamos altura fija por un ratio panorámico (16:9) */
-    /* Esto las hace más anchas que altas */
     @apply w-full aspect-video md:aspect-[21/9] lg:aspect-video
            overflow-hidden relative bg-[#22233A]/5;
   }
 
   .card-image {
-    /* 'object-contain' para que la imagen NUNCA se corte */
-    /* Si prefieres que llene todo el ancho aunque corte un poco, usa 'object-cover' */
     @apply w-full h-full object-contain p-4
            transition-transform duration-700 
            group-hover:scale-105;
   }
 
   .card-content {
-    /* Reducimos el margen negativo para que no tape tanta imagen */
     @apply w-full flex flex-col items-center px-8 pb-10 relative z-10 -mt-6;
   }
 
@@ -184,26 +192,24 @@
            group-hover:bg-[#6366F1] group-hover:scale-105;
   }
 .projects-title {
-    @apply relative inline-block /* Para que el subrayado se ajuste al texto */
+    @apply relative inline-block
            text-4xl md:text-5xl lg:text-6xl
            font-serif
-           tracking-[0.2em] /* Más aire entre letras */
+           tracking-[0.2em]
            text-[#f0ece9] 
            mb-20
-           uppercase; /* Le da un aire más imponente */
-    
-    /* Sombra de texto sutil pero que da profundidad */
+           uppercase;
+
     text-shadow: 3px 3px 0px rgba(99, 102, 241, 0.3);
   }
 
-  /* El subrayado decorativo */
   .projects-title::after {
     content: '';
     @apply absolute -bottom-4 left-1/2 -translate-x-1/2
            w-24 h-1.5 
            bg-[#6366F1] 
            rounded-full;
-    /* Un pequeño resplandor para que brille sobre el fondo oscuro */
+ 
     box-shadow: 0 0 15px rgba(99, 102, 241, 0.6);
   }
 
@@ -271,7 +277,7 @@
 .back-link {
   @apply inline-flex items-center gap-3
          text-[#f0ece9] font-serif tracking-widest
-         hover:text-[#6366F1]/70 transition-colors duration-300 mb-10;
+         hover:text-[#6366F1] transition-colors duration-300 mb-10;
 }
 
 .section-grid {
@@ -322,7 +328,6 @@
     min-width: 280px;
   }
 
-  /* Estilo especial para el link de la Web "En vivo" */
   .link-card.highlight {
     @apply bg-[#6366F1]/10 border-[#f0ece9]/60;
   }
