@@ -1,6 +1,6 @@
 ---
 title: "Cómo desplegué un proyecto Astro con Docker, Nginx y envío de correos"
-img: "astro-docker/intro.png"
+img: "proyecto-musica/intro.png"
 date: 2026-03-24
 description: "Experiencia real desplegando una app con Astro, Docker y SMTP. Problemas, soluciones y aprendizajes."
 tags: ["Astro", "Docker", "Nginx", "Node.js", "DevOps"]
