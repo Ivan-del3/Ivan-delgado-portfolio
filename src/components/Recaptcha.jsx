@@ -10,9 +10,12 @@ export default function Recaptcha({ siteKey }) {
 
     loadRecaptcha().then((grecaptcha) => {
       if (cancelled || !containerRef.current) return;
+      
+      const isMobile = window.innerWidth < 550;
 
       grecaptcha.render(containerRef.current, {
         sitekey: siteKey,
+        size: isMobile ? "compact" : "normal",
         callback: (token) => {
           const input = document.getElementById("g-recaptcha-response");
           if (input) input.value = token;
@@ -35,10 +38,16 @@ export default function Recaptcha({ siteKey }) {
     window.__recaptchaVerified = false;
   },[])
 
-  return (
-    <div style={{ padding: "10px" }}>
-      {!ready && <div>Cargando validación...</div>}
-      <div ref={containerRef}></div>
-    </div>
-  );
+return (
+  <div style={{ 
+    padding: "10px 0",
+    display: "flex",
+    justifyContent: "center",
+    width: "100%",
+    overflowX: "auto"
+  }}>
+    {!ready && <div>Cargando validación...</div>}
+    <div ref={containerRef}></div>
+  </div>
+);;
 }

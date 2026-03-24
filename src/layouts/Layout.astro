@@ -17,29 +17,30 @@ import DropdownMenu from '../components/DropdownMenu.jsx';
 
   <body class="flex flex-col min-h-screen global-style">
 
-  <header class="header-style">
-        <div class="header-container">
+    <header class="header-style">
+      <div class="header-container">
 
-          <div class="logo">
-            <a href="/">
-              <img
-                src="/marca-personal.png"
-                alt="Iván Delgado - Marca Personal"
-                class="img-logo"
-              />
-            </a>
-          </div>
-
-          <DropdownMenu client:visible/>
-
-          <nav id="menu" class="nav-main hidden md:flex">
-            <a href="/" class="nav-link">Sobre mí</a>
-            <a href="/portfolio" class="nav-link">Portfolio</a>
-            <a href="/cv" class="nav-link" target="_blank">CV</a>
-            <a href="/contacto" class="nav-link">Contacto</a>
-          </nav>
+        <div class="logo">
+          <a href="/">
+            <img
+              src="/marca-personal.png"
+              alt="Iván Delgado - Marca Personal"
+              class="img-logo"
+            />
+          </a>
         </div>
-      </header>
+
+        <DropdownMenu client:visible/>
+
+        <nav id="menu" class="nav-main hidden md:flex">
+          <a href="/" class="nav-link">Sobre mí</a>
+          <a href="/blog" class="nav-link">Blog</a>
+          <a href="/portfolio" class="nav-link">Portfolio</a>
+          <a href="/cv" class="nav-link" target="_blank">Cv</a>
+          <a href="/contacto" class="nav-link">Contacto</a>
+        </nav>
+      </div>
+    </header>
 
     <main class="main-container flex-1 w-full">
       <slot />
