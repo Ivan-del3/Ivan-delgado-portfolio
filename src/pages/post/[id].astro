@@ -1,0 +1,87 @@
+---
+export const prerender = true;
+import { getCollection } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+import "../../styles/global.css";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("blog");
+  return posts.map(r => ({
+    params: { id: r.slug }
+  }));
+}
+
+const { id } = Astro.params;
+const posts = await getCollection("blog");
+const post = posts.find(r => r.slug === id);
+
+if (!post) throw new Error(`Post no encontrado: ${id}`);
+
+const { title, img, sections, repository, link } = post.data;
+---
+
+<Layout>
+  <section class="max-w-7xl mx-auto px-6">
+    <a href="/blog" class="back-link">
+      <span class="text-2xl leading-none">←</span>
+      <span>Volver al blog</span>
+    </a>
+
+    <h1 class="box-general-title md:text-5xl text-center text-[#f0ece9] mb-20">
+      {title}
+    </h1>
+
+    <div class="flex flex-col">
+      {sections?.map((section, index) => {
+        const image = section.img || (index === 0 ? img : null);
+        const last = index === sections.length - 1;
+
+        return (
+          <div>
+            <section class="section-grid">
+              <div class="section-image">
+                {image && <img src={`/${image}`} alt={section.title} class="img-project" />}
+              </div>
+              <div class="space-y-6 text-[#2b2b2b]">
+                <h2 class="section-title">{section.title}</h2>
+                <p class="section-text">{section.text}</p>
+              </div>
+            </section>
+
+            {!last && (
+              <div class="separator">
+                <div class="separator-line"></div>
+                <div class="separator-space"></div>
+                <div class="separator-line"></div>
+              </div>
+            )}
+          </div>
+        );
+      })}
+    </div>
+
+    <div class="project-links-container">
+      <h3 class="links-title">¿Te interesa el código?</h3>
+      <div class="links-grid">
+        {repository && (
+          <a href={repository} target="_blank" class="link-card">
+            <span class="link-icon">GitHub</span>
+            <div class="link-content">
+              <span class="link-label">Repositorio</span>
+              <span class="link-url">Ver código fuente →</span>
+            </div>
+          </a>
+        )}
+        {link && (
+          <a href={link} target="_blank" class="link-card highlight">
+            <span class="link-icon">Web</span>
+            <div class="link-content">
+              <span class="link-label">Demo</span>
+              <span class="link-url">Visitar el sitio →</span>
+            </div>
+          </a>
+        )}
+      </div>
+    </div>
+  </section>
+</Layout>
