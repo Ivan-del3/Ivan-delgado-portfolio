@@ -1,4 +1,4 @@
-# Proyecto Astro – Casa de Oración
+# Proyecto Astro – Iván Delgado - Portafolio
 
 Este proyecto está desarrollado con **Astro**, utilizando **islas React** para funcionalidades específicas como **Google reCAPTCHA v2** y el control del envío del formulario.  
 
@@ -190,7 +190,7 @@ Herramientas de terceros integradas en el proyecto:
 
 ```text
 /
-└── casa-oracion-master/
+└── ivan-delgado-portfolio/
     ├── .gitignore
     ├── .vscode/
     │   ├── extensions.json
@@ -261,3 +261,67 @@ Herramientas de terceros integradas en el proyecto:
             └── recaptchaLoader.js
 
 ```
+
+# 📝 Decisión técnica: uso de Markdown en lugar de base de datos
+
+Para la gestión del contenido del blog he optado por utilizar archivos **Markdown** integrados con el sistema de contenido de Astro, en lugar de una base de datos tradicional. Esta decisión responde a criterios de simplicidad, rendimiento y adecuación al tipo de proyecto.
+
+---
+
+## ⚡ Rendimiento y eficiencia
+
+Astro genera páginas estáticas en tiempo de build, lo que permite servir contenido como HTML puro sin necesidad de consultas a base de datos en cada request. Esto se traduce en:
+
+- Tiempos de carga extremadamente rápidos  
+- Mejor rendimiento general  
+- Ventajas claras en SEO  
+
+---
+
+## 🧩 Simplicidad arquitectónica
+
+El uso de Markdown elimina la necesidad de:
+
+- Backend o API  
+- Gestión de base de datos  
+- Sistemas de autenticación o administración  
+
+Esto reduce significativamente la complejidad del proyecto, facilitando su mantenimiento y evolución.
+
+---
+
+## 🧠 Adecuación al caso de uso
+
+El contenido del blog se publica de forma periódica (semanal o quincenal) y no requiere:
+
+- Actualizaciones en tiempo real  
+- Contenido generado por usuarios  
+- Operaciones dinámicas complejas  
+
+Dado este contexto, una base de datos supondría una sobreingeniería sin aportar beneficios reales.
+
+---
+
+## 🛠️ Control y versionado
+
+Al trabajar con Markdown:
+
+- Todo el contenido está versionado con Git  
+- Se pueden revisar cambios fácilmente  
+- Se mantiene un historial completo de cada publicación  
+
+Esto aporta transparencia y control total sobre el contenido.
+
+---
+
+## 📈 Escalabilidad suficiente
+
+Para un blog de estas características (cientos de entradas), el enfoque estático escala perfectamente. El único impacto potencial se encuentra en el tiempo de build, que sigue siendo asumible en este contexto.
+
+---
+
+## ✅ Conclusión
+
+La elección de Markdown no es solo una simplificación, sino una decisión técnica consciente:  
+
+**maximiza el rendimiento, minimiza la complejidad y se ajusta perfectamente a las necesidades reales del proyecto.**

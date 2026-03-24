@@ -6,17 +6,28 @@ export default function DropdownMenu() {
     const menu = document.getElementById("menu");
 
     if (btn && menu) {
-      const handleClick = () => {
+      const handleBtnClick = (e) => {
+        e.stopPropagation(); 
         menu.classList.toggle("hidden");
       };
 
-      btn.addEventListener("click", handleClick);
+      const handleOutsideClick = (e) => {
+        if (!menu.contains(e.target)) { 
+          menu.classList.add("hidden");
+        }
+      };
+
+      btn.addEventListener("click", handleBtnClick);
+      document.addEventListener("click", handleOutsideClick);
 
       return () => {
-        btn.removeEventListener("click", handleClick);
+        btn.removeEventListener("click", handleBtnClick);
+        document.removeEventListener("click", handleOutsideClick);
       };
     }
   }, []);
+
+
 
   return (
     <button id="menu-btn" className="menu-btn">

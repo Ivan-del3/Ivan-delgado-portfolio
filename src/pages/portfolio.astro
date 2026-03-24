@@ -8,26 +8,32 @@ const projects = (await getCollection('projects'))
 
 <Layout>
 
-  <!-- projects -->
-  <section id="projects" class="max-w-7xl mx-auto px-6">
-    <h1 class="box-general-title text-center text-[#f0ece9]">
-      Proyectos
-    </h1>
+  <section id="projects" class="max-w-7xl mx-auto px-6 py-20">
+    <div class="flex justify-center">
+        <h1 class="projects-title">
+          Proyectos
+        </h1>
+      </div>
 
-    <div class="grid-cards">
-      {projects.map((project) => {
-        const { slug, data } = project;
-        const { title, img } = data;
+      <div class="grid-cards">
+        {projects.map((project) => {
+          const { slug, data } = project;
+          const { title, img } = data;
 
-        return (
-          <a href={`/project/${slug}`} class="card">
-            <h2 class="card-title" transition:name={`titulo-${slug}`}>{title}</h2>
-            <div class="w-full h-40 flex items-center justify-center overflow-hidden">
-              <img src={`/${img}`} alt={title} class="card-image" transition:name={`img-${slug}`} />
-            </div>
-          </a>
-        );
-      })}
-    </div>
+          return (
+            <a href={`/project/${slug}`} class="card group">
+              
+              <div class="card-image-wrapper">
+                <img src={`/${img}`} alt={title} class="card-image" transition:name={`img-${slug}`} />
+              </div>
+              
+              <div class="card-content">
+                <h2 class="card-title" transition:name={`titulo-${slug}`}>{title}</h2>
+              </div>
+
+            </a>
+          );
+        })}
+      </div>
   </section>
 </Layout>
