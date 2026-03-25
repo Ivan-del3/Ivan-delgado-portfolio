@@ -188,6 +188,25 @@
   .box-grid-text {
     @apply grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-4 text-base md:text-lg leading-relaxed;
   }
+  /*================================ POSTS DEL BLOG ====================================== */
+
+  .post-title {
+    @apply text-[#f0ece9] text-3xl md:text-4xl font-serif tracking-widest inline-block;
+  }
+
+  .post-text {
+    /* text-left asegura que se lea de manera natural, sin importar cómo se comporte el padre */
+    @apply text-base md:text-lg leading-relaxed whitespace-pre-line text-[#f0ece9]/90 text-left;
+  }
+
+  .post-image {
+    @apply object-cover drop-shadow-2xl rounded-xl border border-[#f0ece9]/10; 
+    @apply w-full h-auto max-h-[600px]; 
+  }
+
+  .post-links-container {
+    @apply mt-20 mb-10 text-center border-t border-[#f0ece9]/20 pt-16;
+  }
 
 /* ================================ CARDS PORTAFOLIO ==================================== */
   .grid-cards {

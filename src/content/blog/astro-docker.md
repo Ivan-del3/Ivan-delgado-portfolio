@@ -4,7 +4,7 @@ img: "proyecto-musica/intro.png"
 date: 2026-03-24
 description: "Experiencia real desplegando una app con Astro, Docker y SMTP. Problemas, soluciones y aprendizajes."
 tags: ["Astro", "Docker", "Nginx", "Node.js", "DevOps"]
-repository: "https://github.com/tu-usuario/tu-repo"
+repository: "https://github.com/Ivan-del3/casa-oracion"
 link: "https://tu-web.com"
 
 sections:
@@ -38,6 +38,5 @@ sections:
     text: |
       Este proyecto me ayudó a entender mejor cómo funciona un entorno real de producción. Aprendí que el problema rara vez es el código en sí, sino la infraestructura; Docker simplifica el entorno pero añade capas de complejidad a la red, y un Nginx mal configurado puede inutilizar la aplicación.
       
-      Pasé de centrarme únicamente en el código a tener en cuenta la infraestructura, la seguridad y la configuración de red, un paso que marca una gran diferencia como desarrollador.
-
+      Pasé de centrarme únicamente en el código a tener en cuenta la infraestructura, la seguridad y la configuración de red.
 ---
