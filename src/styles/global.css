@@ -188,20 +188,101 @@
   .box-grid-text {
     @apply grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-4 text-base md:text-lg leading-relaxed;
   }
+
+  /*====================================== BLOG ====================================*/
+
+  .blog-card {
+    @apply flex flex-col md:flex-row items-center bg-[#f0ece9] rounded-2xl mb-16 overflow-hidden transition-all duration-300;
+  }
+
+  .blog-card-image-wrapper {
+    @apply w-full md:w-6/10 lg:w-4/10 aspect-video overflow-hidden md:pl-5;
+  }
+
+  .blog-card-image {
+    @apply w-full h-full rounded-2xl;
+  }
+
+  .blog-card-content {
+    @apply w-full md:w-4/10 lg:w-6/10 p-8 flex flex-col justify-center;
+  }
+
+  .blog-card-title {
+    @apply text-2xl md:text-3xl font-serif text-[#22233A] mb-4;
+  }
+
+  .blog-card-description {
+    @apply text-[#2b2b2b] mb-3 text-base md:text-lg;
+  }
+
+  .blog-card-tags-container {
+    @apply flex flex-row gap-2 mb-3 flex-wrap;
+  }
+
+  .blog-card-tag {
+    @apply mr-2 px-3 py-1 bg-[#6366F1]/20 rounded-full font-semibold;
+  }
+
+  .blog-card-date {
+    @apply text-sm md:text-base italic;
+  }
+
+  .blog-card-link {
+    @apply inline-block mt-4 text-[#6366F1] font-bold hover:translate-x-2 duration-500;
+  }
+
   /*================================ POSTS DEL BLOG ====================================== */
 
   .post-title {
-    @apply text-[#f0ece9] text-3xl md:text-4xl font-serif tracking-widest inline-block;
+    @apply text-[#f0ece9] text-xl sm:text-2xl md:text-3xl lg:text-4xl font-serif tracking-widest inline-block mb-5 leading-snug;
   }
 
   .post-text {
-    /* text-left asegura que se lea de manera natural, sin importar cómo se comporte el padre */
     @apply text-base md:text-lg leading-relaxed whitespace-pre-line text-[#f0ece9]/90 text-left;
+  }
+  .code-highlight {
+      @apply bg-[#6366F1]/20 
+            text-[#6366F1] 
+            px-1.5 py-0.5 
+            rounded-md 
+            font-mono 
+            text-[0.9em] 
+            border border-[#6366F1]/30;
+    }
+    /* Clase base para cualquier ítem de lista */
+  .list-item {
+    @apply block relative pl-7 mb-2; /* Espacio a la izquierda para el símbolo */
+  }
+
+  /* Estilo para los BUILTS (-) */
+  .list-bullet::before {
+    content: "•";
+    @apply absolute left-0 text-[#6366F1] font-bold text-xl leading-none;
+    top: 2px;
+  }
+
+  /* Estilo para los NÚMEROS (1. 2.) */
+  .list-number::before {
+    content: attr(data-number); /* Toma el número capturado en el HTML */
+    @apply absolute left-0 text-[#6366F1] font-mono font-bold text-sm;
+    top: 4px;
+  }
+
+  /* Ajuste para los saltos de línea manuales que no son listas */
+  .post-text br {
+    @apply mb-4 block content-['']; /* Da un poco de aire entre párrafos */
+  }
+
+  .post-image-first {
+    @apply 
+          max-w-[400px] md:max-w-[500px] lg:max-w-[700px] max-h-[400px] md:max-h-[500px]
+          drop-shadow-2xl rounded-xl border border-[#f0ece9]/10
+          w-full h-auto mt-2 sm:mt-4 lg:mt-12; 
   }
 
   .post-image {
-    @apply object-cover drop-shadow-2xl rounded-xl border border-[#f0ece9]/10; 
-    @apply w-full h-auto max-h-[600px]; 
+    @apply 
+          max-w-[400px] md:max-w-[500px] lg:max-w-[600px] max-h-[300px] md:max-h-[400px];
   }
 
   .post-links-container {

@@ -1,7 +1,7 @@
 ---
 title: "Seguridad y Validación en Astro: reCAPTCHA y TypeScript Actions"
 img: "astro-actions.png"
-date: 2026-03-25
+date: 2026-03-22
 description: "Cómo implementar formularios seguros en Astro utilizando Actions, validación robusta de datos y Google reCAPTCHA v2."
 tags: ["Astro", "TypeScript", "React", "Security", "Backend"]
 repository: "https://github.com/tu-usuario/astro-form-security"
@@ -15,7 +15,6 @@ sections:
       Además, implementé una validación estricta para archivos adjuntos, limitando el tamaño de las imágenes a 512 KB y verificando el tipo MIME para evitar archivos maliciosos.
 
   - title: "Integración de Google reCAPTCHA v2"
-    img: "blog/recaptcha-implementation.png"
     text: |
       La seguridad contra bots es vital. He creado un componente de React que carga dinámicamente el script de Google de forma asíncrona para no afectar el rendimiento inicial (Lighthouse score).
       
@@ -28,7 +27,6 @@ sections:
       Utiliza hooks de React para escuchar el estado de validación global. Una vez que el usuario hace clic, el botón cambia su estado a 'Enviando...', evitando así múltiples peticiones accidentales (double-tap) mientras se procesa el correo.
 
   - title: "Verificación del lado del servidor (Double-Check)"
-    img: "blog/server-verification.png"
     text: |
       No basta con validar en el cliente. En el Action de Astro, recibo el token ('g-recaptcha-response') y realizo una petición POST a la API de Google ('siteverify') usando mi clave secreta guardada en variables de entorno.
       

@@ -1,7 +1,7 @@
 ---
 title: "Guía completa de Astro para principiantes"
 img: "guia-astro.png"
-date: 2026-03-25
+date: 2026-03-18
 description: "Astro es un framework moderno para crear sitios web rápidos, optimizados y fáciles de mantener. Aprende qué es, cómo funciona y cómo empezar paso a paso."
 tags: ["Astro", "Frontend", "JavaScript", "Guía"]
 repository: "https://github.com/tu-usuario/guia-astro"
@@ -18,16 +18,22 @@ sections:
     text: |
       Astro es rápido por varias razones clave:
       
-      1. Zero JavaScript por defecto: No envía JS al navegador si no lo necesitas. El HTML se genera estáticamente.
-      2. rquitectura de islas (Islands Architecture): Solo ciertas partes de la página tienen interactividad, el resto es HTML estático. Ejemplo: un Navbar interactivo usa JS, mientras el texto del blog es solo HTML.
+      
+      1. Cero JavaScript por defecto: No envía JS al navegador si no lo necesitas. El HTML se genera estáticamente.
+      
+      2. Arquitectura de islas (Islands Architecture): Solo ciertas partes de la página tienen interactividad, el resto es HTML estático. Ejemplo: un Navbar interactivo usa JS, mientras el texto del blog es solo HTML.
+    
       3. Generación estática: Astro genera páginas HTML en build. No hay cálculos en tiempo real y todo se sirve ya listo.
 
   - title: "¿Qué son las islas en Astro?"
+    img: "guia-astro.png"
     text: |
       Las islas son componentes interactivos dentro de una página estática. Ejemplo: Un botón con React, un carrusel o un buscador. Solo esas partes cargan JavaScript.
       
-      Se definen mediante directivas como: <MyReactComponent client:load />.
+      Se definen mediante directivas como: '<MyReactComponent client:load />'.
+
       Tipos de carga:
+
       - client:load → carga al iniciar.
       - client:idle → cuando el navegador está libre.
       - client:visible → cuando aparece en pantalla.
@@ -50,6 +56,7 @@ sections:
       Un proyecto típico se estructura con carpetas como public/, src/ (components, layouts, pages, styles), astro.config.mjs y package.json.
       
       Los archivos .astro son especiales y tienen 3 partes:
+      
       1. Frontmatter (JavaScript entre vallas ---).
       2. HTML (Template).
       3. Style (CSS).
@@ -61,6 +68,7 @@ sections:
       Los layouts sirven para reutilizar estructuras. Usan la etiqueta <slot /> que es donde se inserta el contenido de cada página.
       
       En cuanto al sistema de rutas, todo en src/pages/ se convierte en rutas automáticamente:
+      
       - src/pages/index.astro → /
       - src/pages/blog.astro → /blog
       - src/pages/post/1.astro → /post/1
@@ -69,7 +77,8 @@ sections:
   - title: "¿Qué necesitas para empezar?"
     text: |
       Requisitos: Node.js instalado y NPM o PNPM.
-      Para crear el proyecto: npm create astro@latest. Te preguntará por la plantilla, TypeScript y la instalación de dependencias. Para ejecutarlo, usa npm run dev.
+
+      Para crear el proyecto: 'npm create astro@latest'. Te preguntará por la plantilla, TypeScript y la instalación de dependencias. Para ejecutarlo, usa 'npm run dev'.
       
       Astro es perfecto para blogs, landing pages, webs rápidas SEO-friendly y documentación. No es ideal para apps muy dinámicas tipo dashboard complejo o apps tipo SPA intensiva.
 

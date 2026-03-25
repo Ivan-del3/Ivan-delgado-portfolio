@@ -27,42 +27,55 @@ const { title, img, sections, repository, link } = post.data;
       <span>Volver al blog</span>
     </a>
 
-    <h1 class="box-general-title md:text-5xl text-center text-[#f0ece9] mb-20">
+    <h1 class="box-general-title text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-center text-[#f0ece9] leading-snug">
       {title}
     </h1>
 
-    <div class="flex flex-col gap-16 md:gap-24">
+    <div class="flex flex-col">
       {sections?.map((section, index) => {
         const image = section.img || (index === 0 ? img : null);
         const last = index === sections.length - 1;
-
+        const firstSection = index === 0;
         return (
-          <div class="flex flex-col items-center w-full max-w-4xl mx-auto">
+          <div class="flex flex-col items-center w-full max-w-4xl mx-auto mb-14">
+            {firstSection && (
+              <div class="w-full flex justify-center mb-16">
+                <img src={`/${image}`} alt={section.title} class="post-image-first" />
+              </div>              
+            )}
             
-            {/* 1. Título (Alineado a la izquierda respecto a su contenedor para acompañar al texto) */}
             <div class="w-full text-left mb-6">
               <h2 class="post-title">{section.title}</h2>
             </div>
             
-            {/* 2. Texto (El bloque está centrado en la pantalla, pero se lee de izq a der de forma natural) */}
             {section.text && (
-              <div class="w-full mb-10 text-left">
-                <p class="post-text">
-                  {section.text}
-                </p>
+              <div class="w-full text-left">
+                <div 
+                  class="post-text" 
+                  set:html={
+                    section.text
+                          // Resaltar código entre comillas simples
+                          .replace(/'(.*?)'/g, '<code class="code-highlight">$1</code>')
+                          
+                          // Detectar listas con guiones (- )
+                          // Busca el inicio de línea, el guion y captura el resto.
+                          .replace(/^(?:\s*)-\s+(.*)/gm, '<span class="list-item list-bullet">$1</span>')
+                          
+                          // Detectar listas numeradas (1. , 2. , etc)
+                          .replace(/^(?:\s*)(\d+\.)\s+(.*)/gm, '<span class="list-item list-number" data-number="$1">$2</span>')
+                  }
+                />
               </div>
             )}
             
-            {/* 3. Imagen */}
-            {image && (
+            {image && !firstSection && (
               <div class="w-full flex justify-center mb-6">
-                <img src={`/${image}`} alt={section.title} class="post-image" />
+                <img src={`/${image}`} alt={section.title} class="post-image-first post-image" />
               </div>
             )}
 
-            {/* Separador */}
             {!last && (
-              <div class="separator w-full mt-16 mb-0">
+              <div class="separator w-full mt-12 mb-0">
                 <div class="separator-line"></div>
                 <div class="separator-space"></div>
                 <div class="separator-line"></div>
@@ -81,7 +94,7 @@ const { title, img, sections, repository, link } = post.data;
             <span class="link-icon">GitHub</span>
             <div class="link-content">
               <span class="link-label">Repositorio</span>
-              <span class="link-url">Ver código fuente →</span>
+              <span class="link-url">Ver el código →</span>
             </div>
           </a>
         )}

@@ -4,7 +4,6 @@ import { getCollection } from "astro:content";
 
 const blogPosts = (await getCollection('blog'))
   .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
-  
 ---
 
 <Layout>
@@ -17,33 +16,36 @@ const blogPosts = (await getCollection('blog'))
         const { slug, data } = post;
         const tags = data.tags;
         return (
-          <div class="flex flex-col md:flex-row items-center bg-[#f0ece9] rounded-2xl mb-16  overflow-hidden transition-all duration-300">
-            <div class="w-full md:w-1/3 aspect-video overflow-hidden">
+          <div class="blog-card">
+            
+            <div class="blog-card-image-wrapper">
               <img 
                 src={`/${data.img}`} 
                 alt={data.title} 
-                class="w-full h-full object-cover md:pl-4" 
+                class="blog-card-image" 
               />
             </div>
 
-            <div class="w-full md:w-2/3 p-8 flex flex-col justify-center">
-              <h2 class="text-2xl md:text-3xl font-serif text-[#22233A] mb-4">
+            <div class="blog-card-content">
+              <h2 class="blog-card-title">
                 {data.title}
               </h2>
 
-              <p class="text-[#2b2b2b] mb-3 text-base md:text-lg">
+              <p class="blog-card-description">
                 {data.description}
               </p>
-              <div class="flex flex-row gap-2 mb-3 flex-wrap">
+              
+              <div class="blog-card-tags-container">
                 {tags?.map((tag) => {
                   return(
-                    <p class="mr-2 px-3 py-1 bg-[#6366F1]/20 rounded-full font-semibold">{tag}</p>
+                    <p class="blog-card-tag">{tag}</p>
                   )
                 })}
               </div>
-              <p class="text-sm md:text-base italic">{data.date.toLocaleDateString()}</p>
+              
+              <p class="blog-card-date">{data.date.toLocaleDateString()}</p>
 
-              <a href={`/post/${slug}`} class="inline-block mt-4 text-[#6366F1] font-bold hover:translate-x-2 duration-500"> 
+              <a href={`/post/${slug}`} class="blog-card-link"> 
                   Leer más <span class="text-lg inline-block translate-y-[1px]">→</span>
               </a>
               

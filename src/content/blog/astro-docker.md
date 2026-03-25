@@ -1,7 +1,7 @@
 ---
 title: "Cómo desplegué un proyecto Astro con Docker, Nginx y envío de correos"
-img: "proyecto-musica/intro.png"
-date: 2026-03-24
+img: "astro-docker.png"
+date: 2026-03-20
 description: "Experiencia real desplegando una app con Astro, Docker y SMTP. Problemas, soluciones y aprendizajes."
 tags: ["Astro", "Docker", "Nginx", "Node.js", "DevOps"]
 repository: "https://github.com/Ivan-del3/casa-oracion"
@@ -15,7 +15,6 @@ sections:
       El stack tecnológico utilizado incluye: Astro (SSG + islas), Node.js, Docker, Nginx (reverse proxy), Nodemailer y SendGrid.
 
   - title: "Problema 1: Envío de correos en Docker"
-    img: "astro-docker/problema-email.png"
     text: |
       Inicialmente intenté usar Gmail como servidor SMTP, pero fallaba constantemente. Gmail bloquea IPs de contenedores, requiere configuraciones extra como OAuth y resulta poco fiable en producción.
       
@@ -28,7 +27,6 @@ sections:
       Investigando, descubrí que la causa era que Nginx no estaba pasando las cabeceras originales al contenedor de Node. Faltaban cabeceras vitales como 'Host', 'X-Forwarded-Proto' y 'X-Real-IP', necesarias para que el backend supiera de dónde venía la petición.
 
   - title: "Solución y Despliegue"
-    img: "astro-docker/solucion-nginx.png"
     text: |
       La solución pasó por configurar Nginx para que reenviara estas cabeceras usando 'proxy_set_header' y permitiera el 'Upgrade' para conexiones persistentes. Esto permitió que Astro Actions procesara correctamente las peticiones.
       
