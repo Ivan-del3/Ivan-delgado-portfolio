@@ -240,38 +240,52 @@
   .post-text {
     @apply text-base md:text-lg leading-relaxed whitespace-pre-line text-[#f0ece9]/90 text-left;
   }
+
   .code-highlight {
       @apply bg-[#6366F1]/20 
-            text-[#6366F1] 
+            text-[#f0ece9] 
             px-1.5 py-0.5 
             rounded-md 
             font-mono 
             text-[0.9em] 
             border border-[#6366F1]/30;
     }
-    /* Clase base para cualquier ítem de lista */
-  .list-item {
-    @apply block relative pl-7 mb-2; /* Espacio a la izquierda para el símbolo */
+  
+/* ================================= LISTAS ================================= */
+
+
+  .list-bullet, .list-number {
+    @apply block relative mt-10;
   }
 
-  /* Estilo para los BUILTS (-) */
+  .list-bullet + .list-bullet,
+  .list-number + .list-number {
+    @apply mt-0;
+  }
+
+  .list-bullet {
+    @apply pl-10; 
+  }
+
   .list-bullet::before {
-    content: "•";
-    @apply absolute left-0 text-[#6366F1] font-bold text-xl leading-none;
-    top: 2px;
+    content: "•"; 
+    @apply absolute left-4 text-[#6366F1] font-bold text-2xl; 
+    line-height: 1;
+    top: 1px;
   }
 
-  /* Estilo para los NÚMEROS (1. 2.) */
+  .list-number {
+    @apply pl-12;
+  }
+
   .list-number::before {
-    content: attr(data-number); /* Toma el número capturado en el HTML */
-    @apply absolute left-0 text-[#6366F1] font-mono font-bold text-sm;
+    content: attr(data-number);
+    @apply absolute left-2 text-[#6366F1] font-mono font-bold text-sm md:text-base;
     top: 4px;
   }
 
-  /* Ajuste para los saltos de línea manuales que no son listas */
-  .post-text br {
-    @apply mb-4 block content-['']; /* Da un poco de aire entre párrafos */
-  }
+
+
 
   .post-image-first {
     @apply 

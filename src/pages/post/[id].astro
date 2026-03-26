@@ -59,10 +59,10 @@ const { title, img, sections, repository, link } = post.data;
                           
                           // Detectar listas con guiones (- )
                           // Busca el inicio de línea, el guion y captura el resto.
-                          .replace(/^(?:\s*)-\s+(.*)/gm, '<span class="list-item list-bullet">$1</span>')
+                          .replace(/^(?:\s*)-\s+(.*)/gm, '<span class="list-bullet">$1</span>')
                           
                           // Detectar listas numeradas (1. , 2. , etc)
-                          .replace(/^(?:\s*)(\d+\.)\s+(.*)/gm, '<span class="list-item list-number" data-number="$1">$2</span>')
+                          .replace(/^(?:\s*)(\d+\.)\s+(.*)/gm, '<span class="list-item-number list-number" data-number="$1">$2</span>')
                   }
                 />
               </div>

@@ -18,11 +18,8 @@ sections:
     text: |
       Astro es rápido por varias razones clave:
       
-      
       1. Cero JavaScript por defecto: No envía JS al navegador si no lo necesitas. El HTML se genera estáticamente.
-      
-      2. Arquitectura de islas (Islands Architecture): Solo ciertas partes de la página tienen interactividad, el resto es HTML estático. Ejemplo: un Navbar interactivo usa JS, mientras el texto del blog es solo HTML.
-    
+      2. Arquitectura de islas (Islands Architecture): Solo ciertas partes de la página tienen interactividad, el resto es HTML estático. Ejemplo: un Navbar interactivo usa JS, mientras el texto del blog es solo HTML. 
       3. Generación estática: Astro genera páginas HTML en build. No hay cálculos en tiempo real y todo se sirve ya listo.
 
   - title: "¿Qué son las islas en Astro?"
@@ -30,7 +27,7 @@ sections:
     text: |
       Las islas son componentes interactivos dentro de una página estática. Ejemplo: Un botón con React, un carrusel o un buscador. Solo esas partes cargan JavaScript.
       
-      Se definen mediante directivas como: '<MyReactComponent client:load />'.
+      Se definen mediante directivas como: '< MyReactComponent client:load />'.
 
       Tipos de carga:
 
@@ -44,10 +41,12 @@ sections:
       Astro permite usar múltiples frameworks dentro del mismo proyecto. Puedes usar React, Vue, Svelte o Solid.
       
       Ejemplo con React: primero npx astro add react. Luego, en tu código:
+
       ---
       import Counter from '../components/Counter.jsx';
       ---
-      <Counter client:load />
+
+      '< Counter client:load />'
       
       Astro no reemplaza estos frameworks, los usa de forma optimizada.
 
@@ -65,7 +64,7 @@ sections:
 
   - title: "Layouts (plantillas) y Sistema de rutas"
     text: |
-      Los layouts sirven para reutilizar estructuras. Usan la etiqueta <slot /> que es donde se inserta el contenido de cada página.
+      Los layouts sirven para reutilizar estructuras. Usan la etiqueta '< slot />' que es donde se inserta el contenido de cada página.
       
       En cuanto al sistema de rutas, todo en src/pages/ se convierte en rutas automáticamente:
       
