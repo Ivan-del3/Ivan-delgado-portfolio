@@ -4,8 +4,7 @@ img: "guia-astro.png"
 date: 2026-03-18
 description: "Astro es un framework moderno para crear sitios web rápidos, optimizados y fáciles de mantener. Aprende qué es, cómo funciona y cómo empezar paso a paso."
 tags: ["Astro", "Frontend", "JavaScript", "Guía"]
-repository: "https://github.com/tu-usuario/guia-astro"
-link: "https://tu-web.com/blog/guia-astro"
+
 
 sections:
   - title: "Introducción y ¿Qué es Astro?"

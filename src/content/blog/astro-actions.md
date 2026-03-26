@@ -4,8 +4,7 @@ img: "astro-actions.png"
 date: 2026-03-22
 description: "Cómo implementar formularios seguros en Astro utilizando Actions, validación robusta de datos y Google reCAPTCHA v2."
 tags: ["Astro", "TypeScript", "React", "Security", "Backend"]
-repository: "https://github.com/tu-usuario/astro-form-security"
-link: "https://tu-web.com/contacto"
+
 
 sections:
   - title: "Validación de datos en el servidor con Actions"

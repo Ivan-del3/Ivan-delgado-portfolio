@@ -86,28 +86,31 @@ const { title, img, sections, repository, link } = post.data;
       })}
     </div>
 
-    <div class="post-links-container">
-      <h3 class="links-title">¿Te interesa ver el código?</h3>
-      <div class="links-grid">
-        {repository && (
-          <a href={repository} target="_blank" class="link-card">
-            <span class="link-icon">GitHub</span>
-            <div class="link-content">
-              <span class="link-label">Repositorio</span>
-              <span class="link-url">Ver el código →</span>
-            </div>
-          </a>
-        )}
-        {link && (
-          <a href={link} target="_blank" class="link-card highlight">
-            <span class="link-icon">Web</span>
-            <div class="link-content">
-              <span class="link-label">Demo</span>
-              <span class="link-url">Visitar el sitio →</span>
-            </div>
-          </a>
-        )}
+    {(repository || link) && (
+      <div class="post-links-container">
+        <h3 class="links-title">¿Te interesa ver el código?</h3>
+        <div class="links-grid">
+          {repository && (
+            <a href={repository} target="_blank" class="link-card">
+              <span class="link-icon">GitHub</span>
+              <div class="link-content">
+                <span class="link-label">Repositorio</span>
+                <span class="link-url">Ver el código →</span>
+              </div>
+            </a>
+          )}
+          {link && (
+            <a href={link} target="_blank" class="link-card highlight">
+              <span class="link-icon">Web</span>
+              <div class="link-content">
+                <span class="link-label">Demo</span>
+                <span class="link-url">Visitar el sitio →</span>
+              </div>
+            </a>
+          )}
+        </div>
       </div>
-    </div>
+    )}
+
   </section>
 </Layout>

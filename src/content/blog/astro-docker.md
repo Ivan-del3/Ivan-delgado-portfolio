@@ -4,8 +4,7 @@ img: "astro-docker.png"
 date: 2026-03-20
 description: "Experiencia real desplegando una app con Astro, Docker y SMTP. Problemas, soluciones y aprendizajes."
 tags: ["Astro", "Docker", "Nginx", "Node.js", "DevOps"]
-repository: "https://github.com/Ivan-del3/casa-oracion"
-link: "https://tu-web.com"
+
 
 sections:
   - title: "Introducción y Stack tecnológico"
