@@ -24,7 +24,7 @@ const { title, img, sections, repository, link } = data;
 ---
 
 <Layout>
-  <section class="max-w-7xl mx-auto px-6">
+  <section id="project" class="px-6">
 
     <!-- Back link -->
     <a href="/portafolio" class="back-link">
@@ -48,13 +48,37 @@ const { title, img, sections, repository, link } = data;
           <div>
             <section class="section-grid">
 
-              <div class="section-image">
-                <img src={`/${image}`} alt={section.title} class="img-project" />
-              </div>
+            {image && (
+                <div class="section-image order-2 lg:order-1">
+                  <img src={`/${image}`} alt={section.title} class="img-project" />
+                </div>
+              )}
 
-              <div class="space-y-6 text-[#2b2b2b]">
-                <h2 class="section-title">{section.title}</h2>
-                <p class="section-text">{section.text}</p>
+              <div class={`space-y-6 order-1 
+                ${image 
+                  ? 'lg:col-span-5 lg:order-2'
+                  : 'lg:col-span-full'
+                }`}>
+
+                <h2 class={`${image ? 'section-title' : 'section-title text-center'}`}>{section.title}</h2>
+
+                {section.text && (
+                    <div 
+                      class="section-text" 
+                      set:html={
+                        section.text
+                              // Resaltar código entre comillas simples
+                              .replace(/'(.*?)'/g, '<code class="code-highlight">$1</code>')
+                              
+                              // Detectar listas con guiones (- )
+                              // Busca el inicio de línea, el guion y captura el resto.
+                              .replace(/^(?:\s*)-\s+(.*)/gm, '<span class="list-bullet">$1</span>')
+                              
+                              // Detectar listas numeradas (1. , 2. , etc)
+                              .replace(/^(?:\s*)(\d+\.)\s+(.*)/gm, '<span class="list-item-number list-number" data-number="$1">$2</span>')
+                      }
+                    />
+                )}
               </div>
 
             </section>

@@ -12,7 +12,7 @@
   }
 
   .main-container {
-    @apply max-w-6xl
+    @apply max-w-7xl
            mx-auto
            px-6
            py-16;
@@ -192,11 +192,12 @@
   /*====================================== BLOG ====================================*/
 
   .blog-card {
-    @apply flex flex-col md:flex-row items-center bg-[#f0ece9] rounded-2xl mb-16 overflow-hidden transition-all duration-300;
+    @apply flex flex-col items-center md:flex-row md:items-start lg:flex-row lg:items-center bg-[#f0ece9] rounded-2xl mb-16 overflow-hidden transition-all duration-300;
   }
 
   .blog-card-image-wrapper {
-    @apply w-full md:w-6/10 lg:w-4/10 aspect-video overflow-hidden md:pl-5;
+    @apply w-full md:w-6/10 lg:w-4/10 aspect-video overflow-hidden 
+            md:pl-5 md:mt-10 lg:mt-0;
   }
 
   .blog-card-image {
@@ -251,7 +252,7 @@
             border border-[#6366F1]/30;
     }
   
-/* ================================= LISTAS ================================= */
+/* ================================= ENUMERACIONES Y BULLETS ================================= */
 
 
   .list-bullet, .list-number {
@@ -305,7 +306,7 @@
 
 /* ================================ CARDS PORTAFOLIO ==================================== */
   .grid-cards {
-    @apply grid grid-cols-1 lg:grid-cols-2 gap-10 max-w-7xl mx-auto;
+    @apply grid grid-cols-1 lg:grid-cols-2 gap-10 mx-auto px-2 sm:px-12;
   }
   
   .card {
@@ -432,22 +433,22 @@
 }
 
 .section-grid {
-  @apply grid grid-cols-1 md:grid-cols-12 gap-10 items-center; 
+  @apply grid grid-cols-1 lg:grid-cols-12 gap-10 items-start; 
 }
 
 .section-image {
-  @apply md:col-span-7; 
+  @apply lg:col-span-7; 
   @apply flex justify-center w-full;
 }
 
 .section-grid > div:last-child {
-  @apply md:col-span-5;
+  @apply lg:col-span-5;
 }
 
 .img-project {
   @apply object-contain drop-shadow-2xl; 
   @apply w-full h-auto; 
-  @apply max-h-[800px]; 
+  @apply max-h-[800px] items-start lg:mt-2; 
 }
 
 .section-title {
