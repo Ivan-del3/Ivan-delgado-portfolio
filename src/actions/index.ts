@@ -6,8 +6,8 @@ import 'dotenv/config';
 export const server = {
   enviarCorreo: defineAction({
     accept: "form",
-    handler: async (_formData, ctx) => {
-      const formData = await ctx.request.formData();
+    handler: async (_formData) => {
+      const formData = _formData;
 
       const nombre = formData.get("nombre")?.toString();
       const email = formData.get("email")?.toString();
