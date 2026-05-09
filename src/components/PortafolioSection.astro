@@ -4,7 +4,7 @@ import { getCollection } from "astro:content";
 const projects = (await getCollection('projects'))
   .sort((a, b) => a.data.order - b.data.order);
 ---
-<section id="portafolio" class="pb-12 scroll-section">
+<section id="portafolio" class="scroll-section mb-32">
   <div class="flex justify-center">
     <h1 class="projects-title">Proyectos</h1>
   </div>
