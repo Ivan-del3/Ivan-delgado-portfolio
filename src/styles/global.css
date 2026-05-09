@@ -122,6 +122,14 @@
   }
 
   /* ========= FOOTER =========== */
+  .scroll-section {
+    scroll-margin-top: 8rem;
+
+    @media (min-width: 1280px) {
+      scroll-margin-top: 10rem;
+    }
+  }
+
   .site-footer {
     @apply bg-[#f0ece9]
            border-t

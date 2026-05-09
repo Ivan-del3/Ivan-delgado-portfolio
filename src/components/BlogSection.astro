@@ -4,7 +4,7 @@ import { getCollection } from "astro:content";
 const blogPosts = (await getCollection('blog'))
   .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
 ---
-<section id="blog" class="max-w-3xl lg:max-w-5xl mx-auto px-6 pb-12 scroll-mt-28">
+<section id="blog" class="max-w-3xl lg:max-w-5xl mx-auto px-6 pb-12 scroll-section">
   <div class="flex justify-center">
     <h1 class="projects-title">Blog</h1>
   </div>
