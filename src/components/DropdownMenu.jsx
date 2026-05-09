@@ -17,12 +17,17 @@ export default function DropdownMenu() {
         }
       };
 
+      const handleLinkClick = () => menu.classList.add("hidden");
+      const links = menu.querySelectorAll("a");
+
       btn.addEventListener("click", handleBtnClick);
       document.addEventListener("click", handleOutsideClick);
+      links.forEach((link) => link.addEventListener("click", handleLinkClick));
 
       return () => {
         btn.removeEventListener("click", handleBtnClick);
         document.removeEventListener("click", handleOutsideClick);
+        links.forEach((link) => link.removeEventListener("click", handleLinkClick));
       };
     }
   }, []);

@@ -20,7 +20,7 @@
 
   /* ============= HEADER =============== */
   .header-style {
-    @apply relative
+    @apply sticky top-0 z-50
            bg-[#f0ece9]
            border-b
            border-[#22233A];
