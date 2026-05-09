@@ -15,7 +15,7 @@
     @apply max-w-7xl
            mx-auto
            px-6
-           py-16;
+           pt-20;
   }
 
   /* ============= HEADER =============== */
@@ -131,12 +131,29 @@
   }
 
   .site-footer {
-    @apply bg-[#f0ece9]
-           border-t
-           border-[#22233A]
-           text-center
-           text-xs
-           py-8;
+    background: linear-gradient(to bottom, #22233A, #131424);
+    @apply text-center px-6 pt-16 pb-10;
+  }
+
+  .footer-tagline {
+    @apply text-4xl md:text-5xl
+           font-serif tracking-widest
+           text-[#f0ece9]
+           mb-2;
+  }
+
+  .footer-icon-btn {
+    @apply flex items-center justify-center
+           w-14 h-14 rounded-full
+           border border-[#f0ece9]/20
+           text-[#f0ece9]/70
+           transition-all duration-200
+           hover:bg-[#6366F1] hover:border-[#6366F1]
+           hover:text-[#f0ece9] hover:-translate-y-1;
+  }
+
+  .footer-copy {
+    @apply text-xs tracking-wide text-[#f0ece9]/50 mt-6;
   }
 
 
