@@ -8,12 +8,15 @@ import PdfButton from '../components/PdfButton.jsx';
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>CV Iván Delgado</title>
-
+  <style>
+    section { opacity: 1; transform: none; }
+  </style>
 </head>
 <body class="cv-body-wrapper">
   <div class="cv-main-container">
-    
-    <div id="cv-pdf" class="cv-paper">
+
+    <!-- PÁGINA 1 -->
+    <div class="cv-paper">
       <aside class="sidebar">
         <img src="/personal-image-cv.png" alt="Foto Iván Delgado" class="profile-img">
         <h1 class="name">Iván Delgado</h1>
@@ -38,94 +41,101 @@ import PdfButton from '../components/PdfButton.jsx';
           <h2 class="sidebar-title">Habilidades</h2>
 
           <div class="skill-block">
-            <p class="skill-category">Frontend</p>
-            <p class="skill-line">
-              HTML5, CSS3, JavaScript (ES6+), TypeScript, React, Astro, Tailwind CSS
-            </p>
+            <p class="skill-category">Lenguajes</p>
+            <p class="skill-line">PHP 8.2 · JavaScript (ES6+) · Java · SQL · PL/SQL · HTML5 · CSS3</p>
           </div>
 
           <div class="skill-block">
-            <p class="skill-category">Backend</p>
-            <p class="skill-line">
-              Java, PHP, Laravel, REST APIs
-            </p>
+            <p class="skill-category">Frameworks y Librerías</p>
+            <p class="skill-line">Laravel 11 · React 19 · Astro · Tailwind CSS · Filament · Node.js</p>
           </div>
 
           <div class="skill-block">
-            <p class="skill-category">Bases de datos</p>
-            <p class="skill-line">
-              MySQL, PL/SQL, MongoDB
-            </p>
+            <p class="skill-category">Bases de Datos</p>
+            <p class="skill-line">MySQL 8 · Eloquent ORM · MongoDB · diseño relacional</p>
           </div>
 
           <div class="skill-block">
-            <p class="skill-category">Tools & DevOps</p>
-            <p class="skill-line">
-              Git, GitHub, Docker
-            </p>
+            <p class="skill-category">DevOps e Infraestructura</p>
+            <p class="skill-line">Docker · Nginx · Ubuntu Server</p>
           </div>
 
           <div class="skill-block">
-            <p class="skill-category">AI</p>
-            <p class="skill-line">
-              Ollama, LLMs, Prompt Engineering
-            </p>
+            <p class="skill-category">Herramientas</p>
+            <p class="skill-line">Git · Composer · npm · Vite</p>
           </div>
 
-      </div>
+          <div class="skill-block">
+            <p class="skill-category">Metodologías</p>
+            <p class="skill-line">MVC · REST API · Service Layer · Event-Driven Architecture · SSG</p>
+          </div>
+        </div>
       </aside>
 
       <main class="main-content">
         <section class="content-section">
-          <h2 class="section-title-cv">Perfil Profesional</h2>
+          <h2 class="section-title-cv">Resumen Profesional</h2>
           <p class="description">
-          Desarrollador web junior especializado en aplicaciones frontend y backend, con experiencia en JavaScript (ES6+), React y Laravel. 
-          He desarrollado aplicaciones web completas integrando APIs REST y bases de datos como MySQL y MongoDB. 
-          Busco incorporarme a un equipo donde seguir creciendo como desarrollador full stack y aportar soluciones eficientes y escalables.
+            Desarrollador web junior graduado en DAW con 7 meses de prácticas profesionales en entorno empresarial real. Especialidad en backend con Laravel/PHP y experiencia full-stack con React y Astro. Capaz de diseñar, implementar y desplegar aplicaciones web completas con arquitecturas desacopladas, autenticación por token y comunicación en tiempo real mediante WebSockets.
           </p>
         </section>
 
         <section class="content-section">
-          <h2 class="section-title-cv">Experiencia Profesional</h2>
+          <h2 class="section-title-cv">Experiencia Laboral</h2>
           <div class="experience">
             <p class="strong-item">Mantenimiento Informático Paterna S.L.</p>
-            <p class="experience-item">Desarrollador Web (Marzo 2025 - Junio 2025)</p>
+            <p class="experience-item">Desarrollador Web (Noviembre 2025 – Febrero 2026)</p>
             <ul class="experience-list">
-              <li>- Desarrollo backend con PHP y Laravel (MVC)</li>
-              <li>- Diseño y modelado de base de datos relacional (MySQL)</li>
-              <li>- Implementación de relaciones entre entidades con Eloquent ORM</li>
-              <li>- Gestión de base de datos mediante migraciones y seeders</li>
-              <li>- Desarrollo de lógica de negocio con Observers (event-driven)</li>
-              <li>- Implementación de sistema de roles y permisos (RBAC, Policies)</li>
-              <li>- Desarrollo de panel de administración con Filament (CRUD, filtros, datos relacionales)</li>
-              <li>- Validación de datos y lógica condicional en formularios</li>
-              <li>- Uso de Docker y Git en entorno de trabajo colaborativo</li>
+              <li>- Desarrollé sitios web con Astro (SSG, layouts, componentes) e integré React para secciones dinámicas dentro del mismo proyecto.</li>
+              <li>- Implementé el backend con Node.js mediante Astro Actions, incluyendo envío de correos transaccionales y protección de formularios con reCAPTCHA.</li>
+              <li>- Integré internacionalización multilingüe (i18n) y diseñé interfaces responsive con Tailwind CSS y media queries.</li>
+              <li>- Configuré validación de datos en formularios con lógica condicional y gestión de estados de envío.</li>
             </ul>
-            <p class="experience-item">Desarrollador Web (Noviembre 2025 - Febrero 2026)</p>
+          </div>
+          <div class="experience">
+            <p class="strong-item">Mantenimiento Informático Paterna S.L.</p>
+            <p class="experience-item">Desarrollador Web (Marzo 2025 – Junio 2025)</p>
             <ul class="experience-list">
-              <li>- Desarrollo web con Astro (componentes, layouts y SSG)</li>
-              <li>- Integración de React en entorno Astro</li>
-              <li>- Desarrollo backend con Node.js (Astro Actions) y envío de correos</li>
-              <li>- Validación de formularios y protección con reCAPTCHA</li>
-              <li>- Implementación de internacionalización (i18n)</li>
-              <li>- Diseño responsive con media querys y Tailwind CSS</li>
+              <li>- Desarrollé el backend de una aplicación web con Laravel 11 sobre arquitectura MVC, incluyendo lógica de negocio con Observers para flujos event-driven.</li>
+              <li>- Diseñé el esquema de base de datos relacional en MySQL con Eloquent ORM, migraciones y seeders para entornos de desarrollo y producción.</li>
+              <li>- Implementé un sistema de roles y permisos basado en RBAC (Policies de Laravel) para control de acceso granular por tipo de usuario.</li>
+              <li>- Desarrollé un panel de administración con Filament con CRUD, filtros avanzados y visualización de datos relacionales.</li>
             </ul>
           </div>
         </section>
+      </main>
+    </div>
 
+    <!-- PÁGINA 2 -->
+    <div class="cv-paper">
+      <aside class="sidebar">
+      </aside>
+
+      <main class="main-content">
+        <section class="content-section">
+          <h2 class="section-title-cv">Otros Proyectos</h2>
+          <div class="experience">
+            <p class="strong-item">Plataforma Full-Stack con WebSockets y Sistema de Escrow</p>
+            <p class="description" style="margin-bottom: 15px;">Diseñé e implementé una aplicación web de producción con arquitectura SPA desacoplada y API REST, incluyendo comunicación en tiempo real y lógica transaccional avanzada.</p>
+            <ul class="experience-list" style="margin-bottom: 10px;">
+              <li>- Desarrollé el backend en Laravel 11 con autenticación por token (Sanctum), broadcasting en canales privados (Reverb + Pusher), colas de trabajo y rate limiting.</li>
+              <li>- Implementé transacciones atómicas con bloqueo pesimista (lockForUpdate) y máquinas de estado para gestionar un sistema de escrow con integridad de datos garantizada.</li>
+              <li>- Diseñé el frontend en React 19 con Vite, Context API, Custom Hooks y diseño responsivo; integré WebSockets mediante Laravel Echo para actualizaciones en tiempo real.</li>
+              <li>- Desplegué la infraestructura completa con Docker Compose (Nginx, PHP-FPM, MySQL 8, Nginx Proxy Manager con SSL) gestionando volúmenes, redes y variables de entorno en contenedores.</li>
+            </ul>
+          </div>
+        </section>
         <section class="content-section">
           <h2 class="section-title-cv">Formación Académica</h2>
-          <p class="strong-item">CFGS Desarrollo de Aplicaciones Web</p>
-          <p class="experience-item">CEAC FP (2024 - 2026)</p>
-          <ul class="experience-list">
-            <li>- Desarrollo de aplicaciones web full stack</li>
-            <li>- Programación en Java, JavaScript y PHP</li>
-            <li>- Diseño y gestión de bases de datos (MySQL, MongoDB)</li>
-          </ul>
+          <p class="strong-item">Técnico Superior en Desarrollo de Aplicaciones Web (DAW)</p>
+          <p class="experience-item">CEAC FP · 2024 – 2026</p>
+          <p class="description" style="margin-bottom: 15px;">Tecnologías trabajadas durante el ciclo:</p>
+          <p class="description">Java · JavaScript (ES6+) · PHP · Docker · MySQL · MongoDB · PL/SQL · HTML5 · CSS3 · GitHub · consumo de APIs REST · despliegue con Ubuntu Server · integración de modelos de lenguaje local con Ollama y fine-tuning.</p>
         </section>
       </main>
     </div>
-    <PdfButton client:only="react" targetId="cv-pdf" filename="CV-Iván-Delgado-Alcobenda.pdf"/>
-  </div> 
+
+    <PdfButton client:only="react" filename="CV-Iván-Delgado-Alcobenda.pdf"/>
+  </div>
 </body>
 </html>

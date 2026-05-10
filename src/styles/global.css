@@ -724,6 +724,7 @@
   display: flex;
   box-shadow: 0 10px 25px rgba(0,0,0,0.2);
   overflow: hidden;
+  margin-bottom: 20px;
 }
 
 /* COLUMNA IZQUIERDA */
@@ -806,12 +807,12 @@
 /* COLUMNA DERECHA */
 .main-content {
   width: 140mm;
-  padding: 20px 35px;
+  padding: 50px 35px;
   color: #374151;
 }
 
 .content-section {
-  margin-bottom: 20px;
+  margin-bottom: 35px;
   font-size: 14px;
 }
 
@@ -821,7 +822,7 @@
   color: #111827;
   border-bottom: 2px solid #afafaf98;
   padding-bottom: 10px;
-  margin-bottom: 12px; 
+  margin-bottom: 20px; 
   text-transform: uppercase;
 }
 
@@ -832,7 +833,7 @@
 
 .experience-list {
   padding-left: 10px;
-  margin-bottom: 12px;
+  margin-bottom: 25px;
 }
 
 .experience-list li {
@@ -840,13 +841,13 @@
   text-indent: -10px;
 }
 .experience-item{
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   font-weight: bold;
 
 }
 .strong-item {
   font-size: 16px;
-  margin-bottom: 12px;
+  margin-bottom: 15px;
   font-weight: bold;
 }
 
