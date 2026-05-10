@@ -7,6 +7,11 @@ import DropdownMenu from '../components/DropdownMenu.jsx';
 <!DOCTYPE html>
 <html lang="es" class="scroll-smooth">
   <head>
+    <script is:inline>
+      if (performance?.getEntriesByType('navigation')[0]?.type === 'reload') {
+        if (location.pathname !== '/' || location.hash) location.replace('/');
+      }
+    </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="/favicon.svg" />
@@ -49,4 +54,26 @@ import DropdownMenu from '../components/DropdownMenu.jsx';
     <slot name="footer" />
 
   </body>
+
+  <script is:inline>
+    function initEffects() {
+      const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(({ target, isIntersecting }) => {
+          if (isIntersecting) {
+            target.classList.add('revealed');
+            revealObserver.unobserve(target);
+          }
+        });
+      }, { threshold: 0.07, rootMargin: '0px 0px -30px 0px' });
+
+      document.querySelectorAll('main section, main .separator').forEach(el => {
+        revealObserver.observe(el);
+      });
+    }
+
+    document.addEventListener('astro:page-load', initEffects);
+    initEffects();
+  </script>
+
 </html>
+
