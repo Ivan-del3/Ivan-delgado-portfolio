@@ -94,12 +94,11 @@
   transition-duration: 100ms;
 }
 
-
   .logo {
       @apply flex
             flex-col
             items-center
-            px-2 
+            px-2
             xl:absolute
             xl:top-1/2 xl:-translate-y-1/2
             xl:left-10;

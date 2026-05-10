@@ -56,23 +56,27 @@ import DropdownMenu from '../components/DropdownMenu.jsx';
   </body>
 
   <script is:inline>
-    function initEffects() {
-      const revealObserver = new IntersectionObserver((entries) => {
-        entries.forEach(({ target, isIntersecting }) => {
-          if (isIntersecting) {
-            target.classList.add('revealed');
-            revealObserver.unobserve(target);
+    function initReveal() {
+      if (window.__revealObs) window.__revealObs.disconnect();
+
+      window.__revealObs = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+            window.__revealObs.unobserve(entry.target);
           }
         });
       }, { threshold: 0.07, rootMargin: '0px 0px -30px 0px' });
 
-      document.querySelectorAll('main section, main .separator').forEach(el => {
-        revealObserver.observe(el);
+      document.querySelectorAll('main section, main .separator').forEach(function(el) {
+        window.__revealObs.observe(el);
       });
     }
 
-    document.addEventListener('astro:page-load', initEffects);
-    initEffects();
+    if (!window.__revealListenerAdded) {
+      window.__revealListenerAdded = true;
+      document.addEventListener('astro:page-load', initReveal);
+    }
   </script>
 
 </html>
