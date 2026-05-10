@@ -26,6 +26,7 @@
            border-[#22233A];
   }
 
+
   .header-container {
     @apply 
           max-w-6xl mx-auto
@@ -93,6 +94,7 @@
   transition-duration: 100ms;
 }
 
+
   .logo {
       @apply flex
             flex-col
@@ -120,6 +122,36 @@
           active:scale-90;
 
   }
+
+
+  /* ========= REVEAL SECTIONS =========== */
+
+  main section.box-style {
+    opacity: 0;
+    transform: scale(0.97) translateY(12px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  main section:not(.box-style) {
+    opacity: 0;
+    transform: translateY(38px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  main .separator {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+
+  .separator-line {
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.85s ease;
+  }
+
+  .separator.revealed { opacity: 1; }
+  .separator.revealed .separator-line { transform: scaleX(1); }
+  main section.revealed { opacity: 1; transform: none; }
 
   /* ========= FOOTER =========== */
   .scroll-section {
@@ -161,13 +193,9 @@
   /* ================================ ESTILOS DE SECCIÓN  ==================================== */
 
   .box-style {
-    @apply max-w-5xl 
-          mx-auto 
-          px-15 py-12 
-          bg-[#f0ece9] 
-          border border-[#2B2B2B]
-          rounded-xl 
-          shadow-xl
+    @apply max-w-5xl mx-auto px-15 py-12 bg-[#f0ece9] rounded-xl shadow-xl;
+    border: 1px solid #2B2B2B;
+    border-left: 3px solid #6366F1;
   }
   /* ================================ TÍTULOS DE SECCIÓN  ==================================== */
   .box-general-title {
@@ -217,20 +245,30 @@
   /*====================================== BLOG ====================================*/
 
   .blog-card {
-    @apply flex flex-col items-center md:flex-row md:items-start lg:flex-row lg:items-center bg-[#f0ece9] rounded-2xl mb-16 overflow-hidden transition-all duration-300;
+    @apply flex flex-col md:flex-row bg-[#f0ece9] rounded-2xl mb-16 overflow-hidden transition-all duration-300;
   }
 
   .blog-card-image-wrapper {
-    @apply w-full md:w-6/10 lg:w-4/10 aspect-video overflow-hidden 
-            md:pl-5 md:mt-10 lg:mt-0;
+    @apply w-full md:w-5/12 flex-shrink-0 overflow-hidden;
+    min-height: 220px;
   }
 
   .blog-card-image {
-    @apply w-full h-full rounded-2xl;
+    @apply w-full h-full object-cover;
   }
 
   .blog-card-content {
-    @apply w-full md:w-4/10 lg:w-6/10 p-8 flex flex-col justify-center;
+    @apply w-full md:w-7/12 p-8 flex flex-col justify-center relative;
+  }
+
+  .blog-card-content::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 12%;
+    height: 76%;
+    width: 2px;
+    background: linear-gradient(to bottom, transparent, #6366F1 30%, #6366F1 70%, transparent);
   }
 
   .blog-card-title {
@@ -335,13 +373,13 @@
   }
   
   .card {
-    @apply relative bg-[#f0ece9] 
+    @apply relative bg-[#f0ece9]
            border-t-4 border-t-[#6366F1] rounded-2xl
            flex flex-col overflow-hidden
-           shadow-[0_10px_30px_rgba(240,236,233,0.09)] 
+           shadow-[0_10px_30px_rgba(240,236,233,0.09)]
            transition-all duration-500
-           hover:-translate-y-2 
-           hover:shadow-[0_20px_50px_rgba(99,102,241,0.35)]; 
+           hover:-translate-y-2
+           hover:shadow-[0_20px_50px_rgba(99,102,241,0.35)];
   }
 
   .card-image-wrapper {
@@ -351,19 +389,19 @@
 
   .card-image {
     @apply w-full h-full object-contain p-4
-           transition-transform duration-700 
+           transition-transform duration-700
            group-hover:scale-105;
   }
 
   .card-content {
-    @apply w-full flex flex-col items-center 
-    px-8 p-6 lg:p-3
-    relative z-10 -mt-6;
+    @apply w-full flex flex-col items-center
+           px-8 p-6 lg:p-3
+           relative z-10 -mt-6;
   }
 
   .card-title {
     @apply text-xl md:text-2xl font-serif text-center tracking-widest
-           bg-[#22233A] text-[#f0ece9] 
+           bg-[#22233A] text-[#f0ece9]
            px-8 py-3 rounded-full shadow-lg border border-[#6366F1]/30
            transition-all duration-300
            group-hover:bg-[#6366F1] group-hover:scale-105;
@@ -390,14 +428,6 @@
     box-shadow: 0 0 15px rgba(99, 102, 241, 0.6);
   }
 
-
-/* ================================ SKILLS ==================================== */
-.skills-container{
-  @apply flex flex-wrap justify-center gap-4 text-sm md:text-base mt-6;
-}
-.skills {
-  @apply px-4 py-2 bg-[#6366F1]/20 rounded-full font-semibold;
-}
 
 /* ================================ SKILLS ==================================== */
 .cta-component{
