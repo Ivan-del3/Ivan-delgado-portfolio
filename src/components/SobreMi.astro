@@ -1,25 +1,30 @@
+---
+---
 <section id="sobre-mi" class="box-style scroll-section">
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
-    <div class="flex justify-center md:justify-start">
+  <div class="sobre-layout">
+    <div class="sobre-img">
       <img
         src="/personal-image.png"
         alt="Ivan Delgado"
         class="personal-image"
       />
     </div>
-    <div class="md:col-span-2 box-text space-y-4">
+    <div class="sobre-text box-text space-y-4">
       <h2 class="box-general-title">Iván Delgado Alcobenda</h2>
-      <h3 class="text-lg font-semibold mt-10">Técnico superior en desarrollo de software</h3>
+      <h3 class="text-lg font-semibold">Técnico superior en desarrollo de software</h3>
       <p>
-        Desarrollador de aplicaciones web completas,
-        con experiencia en <span class="font-semibold">Java, JavaScript (ES6+), React, Astro, PHP, Laravel y Filament</span>.
-        Me especializo en integrar <span class="font-semibold">frontend y backend</span> con bases de datos
-        como <span class="font-semibold">MySQL y MongoDB</span>, creando soluciones escalables y mantenibles.
+        Desarrollador full-stack con proyectos reales que van desde plataformas de e-commerce completas —con autenticación <span class="font-semibold">JWT</span>, carrito, wallet y chat entre usuarios— hasta reproductores multimedia, herramientas de planificación y este mismo portfolio.
+        Trabajo con <span class="font-semibold">PHP, Laravel y Java</span> en el backend y con <span class="font-semibold">React, Astro y Tailwind</span> en el frontend, tanto con frameworks como desde cero.
       </p>
       <p>
-        Busco formar parte de un equipo donde seguir creciendo como desarrollador,
-        aportando creatividad, compromiso y buenas prácticas en cada proyecto.
-        También me interesa explorar <span class="font-semibold">AI y LLMs</span> para mejorar procesos y automatizaciones.
+        Me muevo bien en entornos containerizados con <span class="font-semibold">Docker y Nginx</span> sobre <span class="font-semibold">Ubuntu Server</span>, y me interesa la arquitectura completa de una aplicación, no solo la capa visible.
+      </p>
+      <p>
+        En IA voy más allá del consumo de APIs: he realizado <span class="font-semibold">fine-tuning de LLMs</span> con técnicas <span class="font-semibold">LoRA</span> usando PyTorch, HuggingFace y TRL, convirtiendo modelos al formato GGUF para desplegarlos localmente con <span class="font-semibold">Ollama</span>.
+        Además integro herramientas de IA en mi flujo de trabajo diario —<span class="font-semibold">Claude Code, GitHub Copilot</span>— para acelerar el desarrollo sin perder el control del código.
+      </p>
+      <p>
+        Busco un equipo donde seguir creciendo en el cruce entre desarrollo web e inteligencia artificial.
       </p>
     </div>
   </div>
@@ -31,42 +36,176 @@
   <div class="separator-line"></div>
 </div>
 
-<section class="box-style mb-32">
-  <h2 class="box-general-title text-center">Habilidades</h2>
+<section class="skills-outer mb-32">
+  <h2 class="skills-heading">Habilidades</h2>
 
-  <div class="skills-container">
-    <span class="skills">HTML</span>
-    <span class="skills">CSS</span>
-    <span class="skills">JavaScript</span>
-    <span class="skills">Java</span>
-    <span class="skills">TypeScript</span>
-    <span class="skills">React</span>
-    <span class="skills">Astro</span>
-    <span class="skills">Tailwind</span>
-    <span class="skills">Git</span>
-    <span class="skills">GitHub</span>
-    <span class="skills">PHP</span>
-    <span class="skills">Laravel</span>
-    <span class="skills">Filament</span>
-    <span class="skills">Docker</span>
-    <span class="skills">MYSQL</span>
-    <span class="skills">PLSQL</span>
-    <span class="skills">MongoDB</span>
-    <span class="skills">Ollama (LLM)</span>
-  </div>
+  <div class="skills-grid">
+    <div class="skill-col from-left">
+      <div class="skill-card">
+        <span class="skill-cat">Frontend</span>
+        <div class="skill-tags">
+          <span>HTML</span><span>CSS</span><span>JavaScript</span>
+          <span>TypeScript</span><span>React</span><span>Astro</span><span>Tailwind</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <span class="skill-cat">Backend</span>
+        <div class="skill-tags">
+          <span>Java</span><span>PHP</span><span>Laravel</span><span>Filament</span>
+        </div>
+      </div>
+    </div>
 
-  <div class="cta flex flex-wrap justify-center gap-6 mt-8">
-    <a href="#portafolio">
-      <button class="cta-component">Ver mis proyectos</button>
-    </a>
-    <a href="https://github.com/Ivan-del3" target="_blank">
-      <button class="cta-component">Mi GitHub</button>
-    </a>
-    <a href="/cv" target="_blank">
-      <button class="cta-component">Ver CV</button>
-    </a>
-    <a href="https://www.linkedin.com/in/iv%C3%A1n-delgado-alcobenda-2949713b8/" target="_blank">
-      <button class="cta-component">Linkedin</button>
-    </a>
+    <div class="skill-col from-right">
+      <div class="skill-card">
+        <span class="skill-cat">Herramientas</span>
+        <div class="skill-tags">
+          <span>Git</span><span>GitHub</span><span>Docker</span>
+          <span>Ubuntu Server</span><span>Ollama</span><span>Fine-tuning LLM</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <span class="skill-cat">Bases de datos</span>
+        <div class="skill-tags">
+          <span>MySQL</span><span>PL/SQL</span><span>MongoDB</span>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
+
+<script>
+  function initSkillsReveal() {
+    const cols = document.querySelectorAll('.skill-col');
+    if (!cols.length) return;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(({ target, isIntersecting }) => {
+          if (isIntersecting) {
+            target.classList.add('revealed');
+            observer.unobserve(target);
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+    cols.forEach(col => observer.observe(col));
+  }
+
+  document.addEventListener('astro:page-load', initSkillsReveal);
+  initSkillsReveal();
+</script>
+
+<style>
+  .sobre-layout {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    align-items: flex-start;
+  }
+
+  .sobre-img {
+    flex: 0 0 210px;
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .sobre-text {
+    flex: 1 1 260px;
+    min-width: 0;
+  }
+
+  @media (max-width: 560px) {
+    .sobre-img {
+      flex-basis: 100%;
+      justify-content: center;
+    }
+  }
+
+  :global(.skills-heading) {
+    font-family: serif;
+    font-size: clamp(1.75rem, 4vw, 2.25rem);
+    letter-spacing: 0.2em;
+    color: #f0ece9;
+    text-align: center;
+    margin-bottom: 3rem;
+    text-shadow: 2px 2px 2px rgba(0,0,0,0.45);
+  }
+
+  .skills-outer {
+    max-width: 56rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 1.5rem;
+  }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  @media (max-width: 640px) {
+    .skills-grid { grid-template-columns: 1fr; }
+    .from-left { transform: translateX(-40px); }
+    .from-right { transform: translateX(40px); }
+  }
+
+  .skill-col {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    opacity: 0;
+    transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .from-left  { transform: translateX(-70px); }
+  .from-right { transform: translateX(70px); }
+
+  .skill-col.revealed {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .skill-card {
+    background: #f0ece9;
+    border: 1px solid #2B2B2B;
+    border-left: 3px solid #6366F1;
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  }
+
+  .skill-cat {
+    display: block;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: #6366F1;
+    font-weight: 600;
+    margin-bottom: 0.85rem;
+  }
+
+  .skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .skill-tags span {
+    font-size: 0.85rem;
+    color: #2b2b2b;
+    background: rgba(99, 102, 241, 0.08);
+    border: 1px solid rgba(99, 102, 241, 0.2);
+    padding: 0.25rem 0.65rem;
+    border-radius: 9999px;
+    transition: color 0.2s, background 0.2s, border-color 0.2s;
+    cursor: default;
+  }
+
+  .skill-tags span:hover {
+    color: #22233A;
+    background: rgba(99, 102, 241, 0.2);
+    border-color: rgba(99, 102, 241, 0.5);
+  }
+</style>
