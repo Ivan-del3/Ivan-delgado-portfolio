@@ -1,7 +1,6 @@
 ---
 import { ClientRouter } from "astro:transitions";
 import "../styles/global.css";
-import DropdownMenu from '../components/DropdownMenu.jsx';
 ---
 
 <!DOCTYPE html>
@@ -22,29 +21,13 @@ import DropdownMenu from '../components/DropdownMenu.jsx';
 
   <body class="flex flex-col min-h-screen global-style">
 
-    <header class="header-style">
-      <div class="header-container">
-
-        <div class="logo">
-          <a href="/">
-            <img
-              src="/marca-personal.png"
-              alt="Iván Delgado - Marca Personal"
-              class="img-logo"
-            />
-          </a>
-        </div>
-
-        <DropdownMenu client:visible/>
-
-        <nav id="menu" class="nav-main hidden md:flex">
-          <a href="/#sobre-mi" class="nav-link">Sobre mí</a>
-          <a href="/#portafolio" class="nav-link">Portafolio</a>
-          <a href="/#blog" class="nav-link">Blog</a>
-          <a href="/#contacto" class="nav-link">Contacto</a>
-
-        </nav>
-      </div>
+    <header class="fixed top-0 z-50 flex items-center justify-center w-full mt-2">
+      <nav id="menu" class="nav-main">
+        <a href="/#sobre-mi" aria-label="sobre-mi" class="nav-link">Sobre mí</a>
+        <a href="/#proyectos" aria-label="proyectos" class="nav-link">Proyectos</a>
+        <a href="/#blog" aria-label="blog" class="nav-link">Blog</a>
+        <a href="/#contacto" aria-label="contacto" class="nav-link">Contacto</a>
+      </nav>
     </header>
 
     <main class="main-container flex-1 w-full">
@@ -54,6 +37,75 @@ import DropdownMenu from '../components/DropdownMenu.jsx';
     <slot name="footer" />
 
   </body>
+
+  <script is:inline>
+    document.addEventListener("astro:page-load", () => {
+      const nav = document.querySelector("header nav");
+      if (!nav) return;
+
+      const updateNav = () => {
+        const atTop = window.scrollY < 10;
+        nav.style.background     = atTop ? "transparent" : "";
+        nav.style.borderColor    = atTop ? "transparent" : "";
+        nav.style.boxShadow      = atTop ? "none"        : "";
+        nav.style.backdropFilter = atTop ? "none"        : "";
+      };
+
+      updateNav();
+      window.addEventListener("scroll", updateNav, { passive: true });
+    });
+  </script>
+
+  <script is:inline>
+    document.addEventListener("astro:page-load", () => {
+      const navLinks = document.querySelectorAll("header nav a");
+      const sectionIds = Array.from(navLinks)
+        .map(l => l.getAttribute("aria-label"))
+        .filter(Boolean);
+
+      const setActive = (id) => {
+        navLinks.forEach(link => {
+          const isActive = link.getAttribute("aria-label") === id;
+          link.classList.toggle("text-indigo-300", isActive);
+          link.classList.toggle("bg-indigo-500/30", isActive);
+          link.classList.toggle("border", isActive);
+          link.classList.toggle("border-indigo-400/40", isActive);
+          link.classList.toggle("text-white/90", !isActive);
+        });
+      };
+
+      navLinks.forEach(link => {
+        link.addEventListener("click", () => setActive(link.getAttribute("aria-label")));
+      });
+
+      const update = () => {
+        const atBottom = window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 5;
+        if (atBottom) {
+          setActive(sectionIds[sectionIds.length - 1]);
+          return;
+        }
+
+        const triggerY = window.scrollY + window.innerHeight * 0.35;
+        let activeId = sectionIds[0];
+        for (const id of sectionIds) {
+          const el = document.getElementById(id);
+          if (!el) continue;
+          if (el.getBoundingClientRect().top + window.scrollY <= triggerY) activeId = id;
+        }
+        setActive(activeId);
+      };
+
+      let ticking = false;
+      window.addEventListener("scroll", () => {
+        if (!ticking) {
+          requestAnimationFrame(() => { update(); ticking = false; });
+          ticking = true;
+        }
+      }, { passive: true });
+
+      update();
+    });
+  </script>
 
   <script is:inline>
     function initReveal() {
