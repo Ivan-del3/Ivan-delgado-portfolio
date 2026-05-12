@@ -1,7 +1,7 @@
 ---
 title: "CASA ORACIÓN"
 img: "casa-oracion/intro.png"
-order: 4
+order: 6
 
 sections:
   - title: "Casa de oración"
