@@ -6,11 +6,13 @@ order: 4
 sections:
   - title: "Refracta"
     text: |
-      Este proyecto web está desarrollado con Astro y preparado para ejecutarse en un entorno Docker, lo que permite un despliegue sencillo y consistente tanto en desarrollo como en producción.
-      Su arquitectura está pensada para ofrecer una web corporativa moderna, rápida y escalable, combinando contenido estático con funcionalidades dinámicas.
+      Proyecto web corporativo desarrollado con **Astro 5** en modo SSR (adaptador Node.js standalone), desplegado dentro de un entorno **Docker** que garantiza un despliegue sencillo, consistente y replicable tanto en desarrollo como en producción.
+      Su arquitectura combina generación de contenido estático con funcionalidades dinámicas mediante el uso de **islas React** (`client:only="react"`), cargando únicamente el JavaScript necesario en cada parte de la aplicación para maximizar el rendimiento.
 
       El proyecto integra un sistema completo de frontend y backend basado en Node.js, permitiendo gestionar formularios, enviar correos y adaptar el contenido según el idioma del usuario.
-      Además, utiliza variables de entorno para configurar servicios externos como el envío de emails o cookies analíticas.
+      Utiliza variables de entorno para configurar servicios externos como el envío de emails, reCAPTCHA y el proxy inverso Nginx.
+
+      He desarrollado este proyecto íntegramente, aunque al no ser el propietario del producto no puedo compartir el código fuente. Puedes visitar la web en el enlace de abajo.
 
 
   - title: "Cambio de idiomas con i18n"
