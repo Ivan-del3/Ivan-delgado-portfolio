@@ -148,7 +148,7 @@
   }
 
   .personal-image {
-    @apply w-full max-w-[18rem] h-auto object-cover object-center rounded-xl;
+    @apply w-full max-w-[11rem] sm:max-w-[18rem] h-auto object-cover object-center rounded-xl;
   }
 
 

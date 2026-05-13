@@ -1,6 +1,5 @@
 ---
 import "../styles/global.css";
-import PdfButton from '../components/PdfButton.jsx';
 ---
 
 <html lang="es">
@@ -39,8 +38,8 @@ import PdfButton from '../components/PdfButton.jsx';
 
           <p class="sidebar-text">
             Portafolio:<br>
-            <a href="mailto:ivandelgado31298@gmail.com">
-              ivandelgado31298@gmail.com
+            <a href="https://ivan-delgado-portfolio.vercel.app/" target="_blank">
+              Iván Delgado
             </a>
           </p>
 
@@ -159,7 +158,7 @@ import PdfButton from '../components/PdfButton.jsx';
       </main>
     </div>
 
-    <PdfButton client:only="react" filename="CV-Iván-Delgado-Alcobenda.pdf"/>
+    <a id="downloadPdf" href="/CV_Ivan_Delgado_Alcobenda.pdf" download="CV_Ivan_Delgado_Alcobenda.pdf">Descargar CV</a>
   </div>
 </body>
 </html>
