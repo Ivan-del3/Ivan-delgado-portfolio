@@ -1,6 +1,6 @@
 ---
 title: "Formulario con reCAPTCHA"
-img: "contacto/intro.png"
+img: "recaptcha/intro.png"
 order: 8
 
 sections:
@@ -17,12 +17,12 @@ sections:
       Cuando el usuario marca el checkbox, Google ejecuta el callback con un token temporal: el componente lo escribe en el `input hidden`, activa `window.__recaptchaVerified` y emite `recaptcha:verified` en `window`, desacoplando la comunicación con el botón de envío.
 
   - title: "Botón deshabilitado — antes de verificar"
-    img: "contacto/boton-deshabilitado.png"
+    img: "recaptcha/button-disabled.png"
     text: |
       `SubmitButton.jsx` arranca con `enabled = false`. Comprueba `window.__recaptchaVerified` al montar (para cubrir re-renders tras View Transitions) y escucha el evento `recaptcha:verified`. Hasta que no se complete el reCAPTCHA el botón permanece en gris con `cursor-not-allowed` y `disabled`.
 
   - title: "Botón habilitado y envío de correo"
-    img: "contacto/boton-habilitado.png"
+    img: "recaptcha/button.png"
     text: |
       Al recibir `recaptcha:verified` el botón cambia a ámbar y se activa. Al hacer submit muestra "Enviando…" y se bloquea para evitar duplicados.
 

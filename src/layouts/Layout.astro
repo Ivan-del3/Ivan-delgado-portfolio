@@ -78,6 +78,9 @@ import "../styles/global.css";
         link.addEventListener("click", () => setActive(link.getAttribute("aria-label")));
       });
 
+      const isHome = window.location.pathname === "/";
+      if (!isHome) return;
+
       const update = () => {
         const atBottom = window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 5;
         if (atBottom) {
@@ -103,7 +106,14 @@ import "../styles/global.css";
         }
       }, { passive: true });
 
-      update();
+      const hash = window.location.hash.slice(1);
+      if (hash && sectionIds.includes(hash)) {
+        setActive(hash);
+        const target = document.getElementById(hash);
+        if (target) setTimeout(() => target.scrollIntoView({ behavior: "smooth" }), 50);
+      } else {
+        update();
+      }
     });
   </script>
 
