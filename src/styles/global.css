@@ -14,8 +14,8 @@
   .main-container {
     @apply max-w-7xl
            mx-auto
-           px-6
-           pt-20;
+           px-4 sm:px-6
+           pt-14 sm:pt-16 md:pt-20;
   }
 
   /* ============= HEADER =============== */
@@ -79,7 +79,7 @@
 
   .contacto-section {
     background: linear-gradient(to bottom, #22233A, #131424);
-    @apply text-center px-6 pt-16 pb-10;
+    @apply text-center px-4 sm:px-6 pt-10 sm:pt-12 md:pt-16 pb-8 sm:pb-10;
   }
 
   .contacto-tagline {
@@ -108,7 +108,7 @@
   /* ================================ ESTILOS DE SECCIÓN  ==================================== */
 
   .box-style {
-    @apply max-w-5xl mx-auto px-15 py-12 bg-[#f0ece9] rounded-xl shadow-xl;
+    @apply max-w-5xl mx-auto px-4 sm:px-8 md:px-12 lg:px-15 py-8 sm:py-10 md:py-12 bg-[#f0ece9] rounded-xl shadow-xl;
     border: 1px solid #2B2B2B;
     border-left: 3px solid #6366F1;
   }
@@ -131,7 +131,7 @@
 
   /* ================================ SEPARADOR ==================================== */
   .separator {
-    @apply flex items-center my-16 max-w-4xl mx-auto;
+    @apply flex items-center my-8 sm:my-12 md:my-16 max-w-4xl mx-auto;
   }
 
   .separator-line {
@@ -173,7 +173,7 @@
   }
 
   .blog-card-content {
-    @apply w-full md:w-7/12 p-8 flex flex-col justify-center relative;
+    @apply w-full md:w-7/12 p-5 sm:p-6 md:p-8 flex flex-col justify-center relative;
   }
 
   .blog-card-content::before {
@@ -533,7 +533,7 @@
     opacity: 0.85;
   }
 
-  @media (max-width: 560px) {
+  @media (max-width: 768px) {
     .sobre-img {
       flex-basis: 100%;
       justify-content: center;
