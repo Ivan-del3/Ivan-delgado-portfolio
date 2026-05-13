@@ -1,7 +1,7 @@
 ---
 title: "REFRACTA"
 img: "refracta/intro.png"
-order: 1
+order: 4
 
 sections:
   - title: "Refracta"

@@ -1,7 +1,7 @@
 ---
 title: "IA DEX"
 img: "ia-dex/ia-dex.png"
-order: 4
+order: 3
 
 sections:
   - title: "IA Dex — Entrena tu propia IA local"

@@ -1,7 +1,7 @@
 ---
 title: "DIAGRAMA DE GANTT"
 img: "diagrama-gantt/intro.png"
-order: 3
+order: 6
 
 sections:
   - title: "Diagrama de gantt usando un archivo html"
